@@ -56,10 +56,11 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 .muted{opacity:.66}
 /* two column */
 .two{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;margin-top:auto;align-items:stretch}
-/* Both columns run to the same bottom line, but each box still hugs its own
-   content — the leftover height is distributed into the gaps, not inside the boxes. */
-.two > .rows{justify-content:space-between}
-.two > .cards{align-content:space-between;grid-auto-rows:min-content}
+/* Every box hugs its own content and stacks from the top on a consistent gap.
+   min-content stops grid items stretching, which is what left hollow space
+   inside the right-hand cards; nothing is spread to fake a level bottom. */
+.two > .rows{justify-content:flex-start}
+.two > .cards{align-content:start;grid-auto-rows:min-content}
 /* black bar */
 .bar{margin-top:auto;background:var(--rb-black);color:var(--rb-offwhite);border-radius:14px;padding:18px 26px;font-family:var(--rb-serif);font-size:22px;line-height:1.3}
 .dark .bar{background:var(--rb-blue)}
@@ -116,7 +117,7 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 .stream .row .n{font-size:26px}
 .stream .row b{font-size:15.5px;margin-bottom:1px}
 .stream .two{gap:22px}
-.stream .cards{gap:10px}
+.stream .cards{gap:9px}
 .stream .card{padding:12px 15px;gap:3px}
 .stream .card b{font-size:15.5px}
 .stream .card .small{font-size:14px;line-height:1.42}
@@ -275,7 +276,7 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
   <p class="lead" style="max-width:960px;margin-bottom:16px">Volton has grown this year: sales are ahead of previous years and people keep asking to join. Two things stand between that demand and a bigger base, and both are in Volton's hands.</p>
   <div class="two" style="margin-top:0;gap:28px;align-items:start">
     <div class="shares"><div class="small muted" style="margin-bottom:4px;font-size:12px">The eight suppliers.* Volton: 114,112 supply points.</div><div class="share hdr"><span></span><span></span><span class="v">share of meters</span><span class="v">share of volume</span></div><div class="share"><span>ΔΕΗ</span><div class="track"><div class="fill" style="width:71.8%"></div></div><span class="v">71.8%</span><span class="v">49%</span></div><div class="share"><span>Protergia</span><div class="track"><div class="fill" style="width:8.6%"></div></div><span class="v">8.6%</span><span class="v">22%</span></div><div class="share"><span>ΗΡΩΝ</span><div class="track"><div class="fill" style="width:4.7%"></div></div><span class="v">4.7%</span><span class="v">9.7%</span></div><div class="share"><span>ZeniΘ</span><div class="track"><div class="fill" style="width:4.7%"></div></div><span class="v">4.7%</span><span class="v">2.5%</span></div><div class="share"><span>Enerwave</span><div class="track"><div class="fill" style="width:4.3%"></div></div><span class="v">4.3%</span><span class="v">6.3%</span></div><div class="share"><span>NRG</span><div class="track"><div class="fill" style="width:2.5%"></div></div><span class="v">2.5%</span><span class="v">4.1%</span></div><div class="share"><span>Φυσικό Αέριο</span><div class="track"><div class="fill" style="width:1.7%"></div></div><span class="v">1.7%</span><span class="v">3.4%</span></div><div class="share volton"><span>Volton</span><div class="track"><div class="fill" style="width:1.5%"></div></div><span class="v">1.5%</span><span class="v">1.2%</span></div></div>
-    <div class="cards" style="grid-template-columns:1fr;margin-top:0;gap:10px">
+    <div class="cards" style="grid-template-columns:1fr;margin-top:0;gap:9px">
 <div class="card" style="background:var(--rb-offwhite);padding:14px 18px"><b>The book is already part business.</b><span class="small">18,212* of those supply points are business meters: <b style="display:inline;font-size:inherit">16%</b> of the count and <b style="display:inline;font-size:inherit">40%*</b> of the volume. A shop or a bakery is a bigger, longer relationship than a household, and Volton already has thousands.</span></div>
     </div>
   </div>
@@ -364,13 +365,13 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
   <h2 class="hl">One room in early October. <span class="turn">We leave it with the offering decided.</span></h2>
   <p class="lead" style="margin-bottom:16px">One 58:hours methodology with Volton's key decision makers in the room and the diagnosis on the table. Draft agenda, high level.</p>
   <div class="two" style="margin-top:0;grid-template-columns:1.05fr .95fr;gap:24px">
-    <div class="rows" style="margin-top:0;gap:8px">
+    <div class="rows" style="margin-top:0;gap:9px">
 <div class="row" style="padding:12px 18px;font-size:15px;background:var(--rb-offwhite)"><div class="n" style="font-size:28px">1</div><div><b style="font-size:16px">The evidence.</b> What September found: the base, the bill, the channels.</div></div>
 <div class="row" style="padding:12px 18px;font-size:15px;background:var(--rb-offwhite)"><div class="n" style="font-size:28px">2</div><div><b style="font-size:16px">The offering.</b> Products, naming, the hero product, the proposition.</div></div>
 <div class="row" style="padding:12px 18px;font-size:15px;background:var(--rb-offwhite)"><div class="n" style="font-size:28px">3</div><div><b style="font-size:16px">Bundles and cross-selling.</b> What Volton can bundle and cross-sell, and in what order.</div></div>
 <div class="row" style="padding:12px 18px;font-size:15px;background:var(--rb-offwhite)"><div class="n" style="font-size:28px">4</div><div><b style="font-size:16px">Channels.</b> What every channel sells, and what it earns.</div></div>
     </div>
-    <div class="cards" style="grid-template-columns:1fr;margin-top:0;gap:10px">
+    <div class="cards" style="grid-template-columns:1fr;margin-top:0;gap:9px">
 <div class="card" style="background:var(--rb-blue);color:var(--rb-offwhite);padding:14px 18px"><span class="ctag" style="color:var(--rb-offwhite)"><svg class="tg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>Out of the room: deliverables</span><span>The offering architecture. The product packages. A digital prototype. All usable at once, and a base for the rebranding campaign that follows.</span></div>
 <div class="card deliv" style="padding:14px 18px"><span class="ctag">Started as a skeleton, finished in the streams</span><span>Channel playbook · commission architecture · synergy mapping · the end-to-end online acquisition journey, in outline.</span></div>
 <div class="card" style="background:var(--rb-cyan);border-left:3px solid var(--rb-blue);padding:14px 18px"><span class="ctag" style="color:var(--rb-blue)">Who is in the room</span><span>Volton's key decision makers: the Energy Unit Lead with the commercial, marketing and customer experience leads. With them, REBORRN's consultants and makers.</span></div>
