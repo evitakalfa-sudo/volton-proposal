@@ -485,11 +485,20 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 <script>
 (function(){
   var slides=[].slice.call(document.querySelectorAll('.slide')),i=0;
+  // Footer shows the part we are in, not the slide's own tag (which already sits on the slide).
+  var parts=[],part='';
+  slides.forEach(function(s){
+    if(s.classList.contains('divider')){
+      var t=s.querySelector('.hl');
+      part=(s.getAttribute('data-name')||'')+' \u00b7 '+((t?t.textContent:'').replace(/\.$/,'').trim());
+    }
+    parts.push(part);
+  });
   var stage=document.getElementById('stage');
   function fit(){var d=stage.parentNode.getBoundingClientRect();var s=Math.min(d.width/1280,d.height/720);stage.style.transform='scale('+s+')';}
   function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach(function(s,k){s.classList.toggle('on',k===i)});
     document.getElementById('counter').textContent=(i+1)+' / '+slides.length;
-    document.getElementById('name').textContent=slides[i].getAttribute('data-name')||'';
+    document.getElementById('name').textContent=parts[i]||'';
     document.getElementById('prog').style.width=((i+1)/slides.length*100)+'%';
     try{localStorage.setItem('volton-deck-slide',String(i))}catch(e){}
   }
