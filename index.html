@@ -224,6 +224,55 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
   .slide{display:flex!important;position:relative;page-break-after:always}
   .chrome{display:none}
 }
+
+/* ============ ADDED · YOUR INVESTMENT ============ */
+.slide[data-name="Your investment"]{padding:48px 76px}
+.slide[data-name="Your investment"] .pill{margin-bottom:18px}
+.slide[data-name="Your investment"] .hl{font-size:38px;margin:0 0 14px;max-width:1060px}
+.slide[data-name="Your investment"] .spine{grid-template-columns:1fr 24px 1fr 24px 1fr;margin-top:auto;margin-bottom:auto}
+.slide[data-name="Your investment"] .farrow svg{width:18px;height:18px}
+.p-card{background:var(--rb-offwhite);border-radius:18px;padding:18px 20px;font-size:16px;line-height:1.45;display:flex;flex-direction:column;gap:4px}
+.p-card b{font-weight:700;font-size:16.5px;display:block}
+.p-card .num{font-family:var(--rb-serif);font-weight:500;font-size:44px;line-height:1;color:var(--rb-blue);margin-bottom:5px;font-variant-numeric:tabular-nums}
+.p-eyeb{display:block;font:600 12px/1.4 var(--rb-sans);letter-spacing:.14em;text-transform:uppercase;opacity:.65;margin-bottom:6px}
+.p-eyeb .sub{display:block;color:var(--rb-blue);opacity:1;letter-spacing:.1em}
+.kd{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:14px;line-height:1.35}
+.kd li{position:relative;padding-left:15px}
+.kd li::before{content:"";position:absolute;left:0;top:.5em;width:6px;height:6px;border-radius:50%;background:var(--rb-blue)}
+.p-note{margin-top:auto;padding-top:9px;border-top:1px solid rgba(18,18,18,.12);font-size:13.5px;line-height:1.4}
+.p-note b{display:inline;font-size:inherit}
+/* Step 2 sits back: it is not priced yet, and should not compete with the two numbers that are. */
+.p-card.later{background:transparent;border:1.5px dashed rgba(18,18,18,.28);opacity:.6}
+.p-card.later .num{color:var(--rb-black);font-size:27px;padding-top:9px}
+.p-card.later .kd:not(.streams) li::before{background:rgba(18,18,18,.45)}
+.kd.streams{gap:8px}
+.kd.streams li{padding-left:20px}
+.kd.streams li::before{content:attr(data-n);position:absolute;left:0;top:0;width:auto;height:auto;border-radius:0;background:none;font-family:var(--rb-serif);font-weight:500;font-size:15px;line-height:1.35;color:var(--rb-blue)}
+.kd .st{font-weight:700}
+.p-foot{margin-top:0;font-size:13px;opacity:.55;line-height:1.45}
+/* ============ ADDED · THE THREE DAYS ============ */
+.slide[data-name="The three days"]{padding:38px 72px 32px}
+.slide[data-name="The three days"] .pill{margin-bottom:18px}
+.w-hl{font-size:36px;margin:0 0 8px;max-width:1060px}
+.w-lead{font-size:16.5px;line-height:1.45;max-width:1136px;margin:0 0 10px}
+.w-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;flex-shrink:0}
+.w-card{background:var(--rb-offwhite);border-radius:18px;padding:14px 16px 12px;font-size:14.5px;line-height:1.4;display:flex;flex-direction:column;gap:9px}
+.w-eyeb{display:block;font:600 12px/1.4 var(--rb-sans);letter-spacing:.14em;text-transform:uppercase;opacity:.65}
+.w-eyeb b{color:var(--rb-black);opacity:1;font-weight:700}
+.w-blk{display:flex;flex-direction:column;gap:4px}
+.w-lbl{font:600 10.5px/1 var(--rb-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--rb-blue)}
+.w-blk p{margin:0}
+.w-blk.obj p{font-weight:700;font-size:15px;line-height:1.38}
+.w-flow{list-style:none;margin:2px 0 0;padding:0 0 0 18px;position:relative;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.35}
+.w-flow::before{content:"";position:absolute;left:4px;top:7px;bottom:7px;width:1px;background:rgba(18,18,18,.18)}
+.w-flow li{position:relative}
+.w-flow li::before{content:"";position:absolute;left:-17px;top:.42em;width:7px;height:7px;border-radius:50%;background:var(--rb-blue);box-shadow:0 0 0 3px var(--rb-offwhite)}
+.w-blk.out{margin-top:auto;padding-top:10px;border-top:1px solid rgba(18,18,18,.12)}
+.w-blk.out p{font-size:14px;line-height:1.4}
+.w-rooms{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;flex-shrink:0}
+.w-room{background:var(--rb-offwhite);border-radius:14px;padding:9px 16px;font-size:13.5px;line-height:1.45;display:flex;gap:12px;align-items:baseline}
+.w-room .w-lbl{white-space:nowrap;padding-top:1px}
+.w-foot{margin-top:7px;font-size:13px;opacity:.6;line-height:1.45}
 </style>
 
 <div class="deck"><div class="stage" id="stage">
@@ -460,7 +509,141 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
   <p class="foot">Under each month, the key deliverables of that month. Streams 1, 2 and 4 start in October, Stream 3 in November.</p>
 </section>
 
-<!-- ================= 15 CLOSE ================= -->
+<!-- ================= 15 YOUR INVESTMENT ================= -->
+<section class="slide ivory" data-name="Your investment">
+  <div class="pill">Your investment</div>
+  <h2 class="hl">We don&rsquo;t charge for time.<br>We price on <span class="turn">speed</span> and on the <span class="turn">value delivered</span>.</h2>
+
+  <div class="spine">
+
+    <div class="p-card">
+      <span class="p-eyeb">Step 0 &middot; Diagnose</span>
+      <div class="num">&euro;25k</div>
+      <b>Two weeks to uncover what matters before anyone decides.</b>
+      <ul class="kd">
+        <li>Map your customer base and where customers drop off</li>
+        <li>Follow the funnel from lead to sale</li>
+        <li>Review every channel: performance, pain points and opportunity</li>
+        <li>Assess stores through visits and mystery shopping</li>
+        <li>Update the presentation to the CEO with our assessment</li>
+      </ul>
+    </div>
+
+    <div class="farrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></div>
+
+    <div class="p-card">
+      <span class="p-eyeb">Step 1 &middot; Decide<span class="sub">The 58:hours workshop</span></span>
+      <div class="num">&euro;75k</div>
+      <b>Three days. Decisions taken, and work already built. Not a set of minutes.</b>
+      <ul class="kd">
+        <li>Define the new proposition and offer, including package names</li>
+        <li>Clarify every channel&rsquo;s role, key tactics and ownership</li>
+        <li>Design and agree the full online acquisition experience</li>
+        <li>Create a first version of the bill, aligned with stakeholders</li>
+      </ul>
+      <span class="p-note"><b>Includes preparation:</b> agenda design, pre-reading and decision materials.</span>
+    </div>
+
+    <div class="farrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></div>
+
+    <div class="p-card later">
+      <span class="p-eyeb">Step 2 &middot; Build</span>
+      <div class="num">Scoped after the workshop</div>
+      <b>Priorities are set in the workshop. Each stream is scoped after it.</b>
+      <ul class="kd streams">
+        <li data-n="1"><span class="st">The offering.</span> Segments and personas mapped across products, and the bundle map</li>
+        <li data-n="2"><span class="st">Go-to-market.</span> One playbook written per channel, the inbound process live, lead routing, stores redesigned</li>
+        <li data-n="3"><span class="st">The advisers.</span> Payouts remodelled on lifetime value, the new commission architecture, piloted before it goes wide</li>
+        <li data-n="4"><span class="st">The experience.</span> The prototype taken to live, myON improvements, the bill designed and finalised, CVM journeys built in Salesforce</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p class="p-foot">All prices exclude VAT.</p>
+</section>
+
+<!-- ================= 16 THE THREE DAYS ================= -->
+<section class="slide grey" data-name="The three days">
+  <div class="pill">The 58:hours workshop</div>
+  <h2 class="hl w-hl">Everyone who needs to decide, in one room.<br><span class="turn">Three days to set the direction.</span></h2>
+  <p class="lead w-lead">58:hours is our proprietary methodology: complex challenges cracked in 58 hours or less. We begin with a shared understanding and spend three focused days making the decisions that matter.</p>
+
+  <div class="w-cards">
+
+    <div class="w-card">
+      <span class="w-eyeb">Day 1 &middot; <b>The offering</b></span>
+      <div class="w-blk obj">
+        <span class="w-lbl">Objective</span>
+        <p>Align the core decision-makers on the new direction: the proposition, products and their names.</p>
+      </div>
+      <div class="w-blk">
+        <span class="w-lbl">Flow</span>
+        <ol class="w-flow">
+          <li>Review the diagnosis together</li>
+          <li>Define the proposition and the direction it creates</li>
+          <li>Shape the household and business packages</li>
+          <li>Develop naming in parallel with a REBORRN branding expert</li>
+        </ol>
+      </div>
+      <div class="w-blk out">
+        <span class="w-lbl">By the end of the day</span>
+        <p>A signed off proposition and package set, setting the direction for channels and customer experience.</p>
+      </div>
+    </div>
+
+    <div class="w-card">
+      <span class="w-eyeb">Day 2 &middot; <b>The channels</b></span>
+      <div class="w-blk obj">
+        <span class="w-lbl">Objective</span>
+        <p>Give every channel a clear role, a way to win, and what it needs to deliver.</p>
+      </div>
+      <div class="w-blk">
+        <span class="w-lbl">Flow</span>
+        <ol class="w-flow">
+          <li>Split into channel teams</li>
+          <li>Cover inbound, stores, door-to-door and outbound</li>
+          <li>Define each channel&rsquo;s audience, role, tactics and tools</li>
+        </ol>
+      </div>
+      <div class="w-blk out">
+        <span class="w-lbl">By the end of the day</span>
+        <p>Per channel: the role, the tactics, and what it takes to make it real, with owners and next steps agreed across the room.</p>
+      </div>
+    </div>
+
+    <div class="w-card">
+      <span class="w-eyeb">Day 3 &middot; <b>The experience</b></span>
+      <div class="w-blk obj">
+        <span class="w-lbl">Objective</span>
+        <p>Agree the online experience end to end, and see it running.</p>
+      </div>
+      <div class="w-blk">
+        <span class="w-lbl">Flow</span>
+        <ol class="w-flow">
+          <li>Map, design and align on the online acquisition in a working prototype</li>
+          <li>Design and agree on the first version of the bill</li>
+          <li>Agree and prioritise the key myON app improvements for Q4</li>
+          <li>Prioritise CVM journeys and set their direction</li>
+        </ol>
+      </div>
+      <div class="w-blk out">
+        <span class="w-lbl">By the end of the day</span>
+        <p>An approved prototype, ready for development, a first version of the bill, and the myON priorities set for Q4.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="w-rooms">
+    <div class="w-room"><span class="w-lbl">From Volton</span><span>Energy Unit lead, Commercial, Marketing, Stores, Call Centre, Customer Care, IT, Product Owners.</span></div>
+    <div class="w-room"><span class="w-lbl">From REBORRN</span><span>Partner, Project Leads, Product Design, Content Strategist.</span></div>
+  </div>
+
+  <p class="w-foot">Indicative flow, refined together as we prepare the workshop.</p>
+</section>
+
+<!-- ================= 17 CLOSE ================= -->
 <section class="slide dark" data-name="Close">
   <div class="pill">Next steps, the team</div>
   <h2 class="hl">Six months, four streams. <span class="turn">All four running by the third month.</span></h2>
