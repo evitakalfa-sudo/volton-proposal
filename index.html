@@ -400,15 +400,20 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 .slide[data-name="How it runs"] .lead{font-size:18px;line-height:1.5;max-width:1000px;margin-bottom:2px}
 .slide[data-name="How it runs"] .tl-txt{font-size:14px}
 .slide[data-name="How it runs"] .tl-txt b{font-size:16.5px}
-.slide[data-name="How it runs"] .dlv{font-size:12.5px;margin-top:7px}
+.slide[data-name="How it runs"] .dlv{font-size:11.5px;margin-top:6px}
 .slide[data-name="How it runs"] .tl-dot{margin:14px auto 11px}
 .slide[data-name="How it runs"] .p-card{padding:14px 18px;gap:2px}
 .slide[data-name="How it runs"] .p-card .num{font-size:38px;margin-bottom:2px}
 .slide[data-name="How it runs"] .p-eyeb{margin-bottom:4px}
 .slide[data-name="How it runs"] .p-note{font-size:13px}
-.slide[data-name="How it runs"] .tl{margin-top:34px}
-.slide[data-name="How it runs"] .bar{font-size:19px;padding:20px 26px;line-height:1.4;margin-top:auto}
-.slide[data-name="How it runs"] .bar b{font-family:var(--rb-sans);font-weight:700;font-size:16.5px}
+.slide[data-name="How it runs"] .tl{margin-top:24px}
+.slide[data-name="How it runs"] .bar{font-size:17.5px;padding:16px 22px;line-height:1.4;margin-top:auto}
+.slide[data-name="How it runs"] .bar b{font-family:var(--rb-sans);font-weight:700;font-size:15.5px}
+.lanes{display:flex;flex-direction:column;gap:6px;margin-top:20px;flex-shrink:0}
+.lane-h{height:23px;border-radius:7px;background:var(--rb-blue);color:var(--rb-offwhite);font:500 12.5px/23px var(--rb-sans);padding:0 12px}
+.lane-h span{font-weight:700;margin-right:8px;opacity:.75}
+.lane-h.s1{background:var(--rb-black)}
+.lane{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;font-size:11.5px;line-height:1.35;text-align:center;opacity:.78;margin-bottom:5px}
 .slide[data-name="The day"]{padding:42px 76px 34px}
 .slide[data-name="The day"] .pill{margin-bottom:18px}
 .slide[data-name="The day"] .w-card{background:var(--rb-offwhite)}
@@ -653,6 +658,12 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
     <div class="tl-col"><div class="tl-m">Week 4</div><div class="tl-dot"></div><div class="tl-txt"><b>Review &amp; plan</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>Tested and refined, then the spec and the deployment roadmap</span></div></div>
   </div>
   
+  <div class="lanes">
+    <div class="lane-h s1"><span>01</span>Digital acquisition</div>
+    <div class="lane"><div>The journey agreed, features in and out</div><div>The funnel measured, and where it leaks</div><div>The journey designed, flows built out</div><div>Built on real tariffs</div><div>Tested with real customers</div></div>
+    <div class="lane-h"><span>02</span>The bill</div>
+    <div class="lane"><div>The bill and the warning agreed</div><div>The calendar, the churn, the call reasons</div><div>The analysis and the estimate designed</div><div>Built on real consumption</div><div>Scored against bills already issued</div></div>
+  </div>
   <div class="bar"><b>Out of each stream:</b> an interactive prototype, running on dummy data, that takes a customer through the experience end to end. It follows Volton&rsquo;s brand guidelines on a design system we build for it, it lives on a live URL your team can open and use, and it comes with a high level spec and a deployment roadmap beside it. It settles the flows and the functionality before anyone writes production code, so the live connections and the scale come after, with IT.</div>
 </section>
 
