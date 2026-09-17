@@ -218,7 +218,6 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 .cpanel header b{font-family:var(--rb-serif);font-weight:500;font-size:20px;line-height:1.15;display:block}
 .cpanel header small{display:block;font-size:12px;opacity:.65;margin-top:4px}
 .cpanel .close{background:transparent;border:1px solid rgba(18,18,18,.25);color:var(--rb-black);border-radius:999px;width:32px;height:32px;cursor:pointer;font-size:18px;line-height:1;flex:0 0 auto}
-.cpanel .warn{background:var(--rb-yellow);font-size:12.5px;line-height:1.4;padding:9px 18px;border-bottom:1px solid rgba(18,18,18,.1)}
 .cpanel .list{flex:1;overflow:auto;padding:6px 18px 12px}
 .cmt{padding:11px 0 9px;border-bottom:1px solid rgba(18,18,18,.08)}
 .cmt .who{display:flex;justify-content:space-between;gap:8px;font-size:12px;margin-bottom:3px}
@@ -731,7 +730,6 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 
 <aside class="cpanel" id="cpanel" aria-label="Comments" aria-hidden="true">
   <header><div><b id="ctitle">Comments</b><small id="csub"></small><small><button type="button" class="lnk" id="cpintoggle">Hide pins on the slide</button></small></div><button class="close" id="cclose" aria-label="Close comments">&times;</button></header>
-  <div class="warn" id="cwarn" hidden></div>
   <div class="list" id="clist"></div>
   <form id="cform" autocomplete="off">
     <div class="replying" id="creplying" hidden><span>Replying to <b id="creplyto"></b></span><button type="button" id="ccancel">cancel</button></div>
@@ -787,7 +785,7 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
   var API='/api/comments', POLL_OPEN=15000, POLL_CLOSED=60000;
   var $=function(id){return document.getElementById(id)};
   var deck=document.querySelector('.deck'), stage=$('stage'), pinsEl=$('pins'), slides=[].slice.call(document.querySelectorAll('.slide'));
-  var panel=$('cpanel'), list=$('clist'), form=$('cform'), nameEl=$('cname'), textEl=$('ctext'), sendBtn=$('csend'), err=$('cerr'), warn=$('cwarn');
+  var panel=$('cpanel'), list=$('clist'), form=$('cform'), nameEl=$('cname'), textEl=$('ctext'), sendBtn=$('csend'), err=$('cerr');
   var comments=[], cur=0, replyTo=null, open=false, available=true, timer=null;
   var pending=null, pinMode=false, hot=null, pinsHidden=false, chip=null, selPending=null;
   var owner=''; try{ owner=localStorage.getItem('volton-comment-owner')||''; if(!owner){ var a=new Uint8Array(16); (window.crypto||{}).getRandomValues?crypto.getRandomValues(a):a.forEach(function(_,i){a[i]=Math.random()*256}); owner=[].map.call(a,function(b){return ('0'+b.toString(16)).slice(-2)}).join(''); localStorage.setItem('volton-comment-owner',owner);} }catch(e){}
@@ -885,7 +883,6 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
   function load(){
     return api(API).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).then(function(d){
       available=true; comments=d.comments||[];
-      warn.hidden=!!d.persistent; if(!d.persistent) warn.textContent='This deploy has no comment store yet: comments are kept only until the next deploy.';
       form.hidden=false; render();
     }).catch(function(){ available=false; comments=[]; form.hidden=true; render(); });
   }
