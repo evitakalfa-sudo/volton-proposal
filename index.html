@@ -362,6 +362,12 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 .slide[data-name="Your investment"] .p-card .kd{font-size:13.5px}
 .slide[data-name="Close"] .lead{font-size:18.5px;margin-bottom:18px;max-width:900px}
 .slide[data-name="Close"] .hl{margin-bottom:16px}
+.slide[data-name="The day"]{padding:42px 76px 34px}
+.slide[data-name="The day"] .pill{margin-bottom:18px}
+.slide[data-name="The day"] .w-card{background:var(--rb-offwhite)}
+.slide[data-name="The day"] .w-flow li::before{box-shadow:0 0 0 3px var(--rb-offwhite)}
+.slide[data-name="The day"] .w-cards{flex:1 1 auto}
+.slide[data-name="The day"] .w-rooms{margin-top:12px}
 </style>
 
 <div class="deck"><div class="stage" id="stage">
@@ -607,7 +613,7 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
     <div class="tl-line"></div>
     <div class="tl-col"><div class="tl-m">Week 1</div><div class="tl-dot"></div><div class="tl-txt"><b>Assess</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>A lightweight diagnosis of the current situation, measured on a slice of data named in advance, not an audit of every channel</span></div></div>
     <div class="tl-col"><div class="tl-m">Week 2</div><div class="tl-dot"></div><div class="tl-txt"><b>Design</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>Best practice gathered, the solution designed, and two or three approaches wireframed rather than argued</span></div></div>
-    <div class="tl-col"><div class="tl-m">Week 3</div><div class="tl-dot"></div><div class="tl-txt"><b>Decide &amp; build</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>One day with the core team: features and functionality decided in the room. The prototype is built against those decisions</span></div></div>
+    <div class="tl-col"><div class="tl-m">Week 3</div><div class="tl-dot"></div><div class="tl-txt"><b>Decide &amp; build</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>One full day together, both streams in the same room. Features and functionality decided. The prototype is built against those decisions</span></div></div>
     <div class="tl-col"><div class="tl-m">Week 4</div><div class="tl-dot"></div><div class="tl-txt"><b>Review, refine, plan</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>The prototype tested and refined, and the action plan for deployment and measurement</span></div></div>
   </div>
   <div class="spans" style="grid-template-columns:repeat(4,1fr)" aria-label="Both streams run in parallel">
@@ -615,36 +621,71 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
     <div class="span s1" style="grid-column:1/5"><span>01</span>Digital acquisition</div>
     <div class="span" style="grid-column:1/5"><span>02</span>The bill</div>
   </div>
-  <p class="foot">Week 3 is where the 58:hours methodology sits, compressed into one day per stream: everyone who needs to decide, in one room, deciding rather than reviewing.</p>
+  <p class="foot">Week 3 holds the one day that sets the pace for everything after it. The next slide is what happens in it.</p>
 </section>
 
-<!-- ================= 17 DELIVERABLES 01 ================= -->
+<!-- ================= 17 THE DAY ================= -->
+<section class="slide grey" data-name="The day">
+  <div class="pill">One full day, in week three</div>
+  <h2 class="hl w-hl">One room, one day. <span class="turn">We set the pace.</span></h2>
+  <p class="lead w-lead">Both streams come into the same room on the same day. Half a day each, with only the people that half needs. It closes on the thing neither prototype can be built without: how Volton and REBORRN work together to make this real, and how fast.</p>
+
+  <div class="w-cards">
+    <div class="w-card">
+      <span class="w-eyeb">Morning &middot; <b>Digital acquisition</b></span>
+      <div class="w-blk obj"><span class="w-lbl">Objective</span><p>Decide the journey that gets built.</p></div>
+      <div class="w-blk"><span class="w-lbl">In the room</span><ul class="w-flow"><li>What week one measured, on the table</li><li>The approaches on the wall, chosen rather than admired</li><li>Features in, features out, and what waits</li></ul></div>
+      <div class="w-blk out"><span class="w-lbl">Out of it</span><p>The journey the prototype is built against, written down before anyone leaves.</p></div>
+    </div>
+    <div class="w-card">
+      <span class="w-eyeb">Afternoon &middot; <b>The bill</b></span>
+      <div class="w-blk obj"><span class="w-lbl">Objective</span><p>Decide the warning, and what the bill says.</p></div>
+      <div class="w-blk"><span class="w-lbl">In the room</span><ul class="w-flow"><li>The estimate model, scored against bills already issued</li><li>The week-ten warning, three ways</li><li>What happens to the clawback</li></ul></div>
+      <div class="w-blk out"><span class="w-lbl">Out of it</span><p>The warning that ships, and the bill moment behind it.</p></div>
+    </div>
+    <div class="w-card">
+      <span class="w-eyeb">Close &middot; <b>How we work together</b></span>
+      <div class="w-blk obj"><span class="w-lbl">Objective</span><p>Set the pace for making it real.</p></div>
+      <div class="w-blk"><span class="w-lbl">In the room</span><ul class="w-flow"><li>Who owns what, on both sides, by name</li><li>How decisions get taken between the demo and production</li><li>What legal, IT and procurement have to clear, and when</li></ul></div>
+      <div class="w-blk out"><span class="w-lbl">Out of it</span><p>One way of working, agreed in the room, that takes both prototypes to production without a restart.</p></div>
+    </div>
+  </div>
+
+  <div class="w-rooms">
+    <div class="w-room"><span class="w-lbl">From Volton</span><span>The named owner of each stream, with Commercial, Marketing, Customer Care, Billing and IT. Each of them for their half only.</span></div>
+    <div class="w-room"><span class="w-lbl">From REBORRN</span><span>Partner, Project Lead, Product Design, Engineering Lead.</span></div>
+  </div>
+
+  <p class="w-foot">Our 58:hours methodology, in a single day. Everyone who needs to decide is in the room, deciding rather than reviewing.</p>
+</section>
+
+<!-- ================= 18 DELIVERABLES 01 ================= -->
 <section class="slide" data-name="Deliverables 01">
   <div class="pill">Stream 01, Digital acquisition</div>
   <h2 class="hl">What lands, week by week. <span class="turn">Ending in a customer who buys alone.</span></h2>
   <div class="cards cols-4">
     <div class="card"><span class="wk-h">Week 1 &middot; Assess</span><b>The funnel, counted.</b><ul class="kd"><li>The as-is funnel measured step by step: where the ~3,000 a month are actually lost</li><li>Callback queue conversion, by source and by time-to-contact</li><li>The 16 tariff pages read as a choice: what a customer is really being asked to decide</li><li>Legal's actual position on e-signature, and IT's on what can integrate</li></ul></div>
     <div class="card"><span class="wk-h">Week 2 &middot; Design</span><b>The journey, designed.</b><ul class="kd"><li>Benchmark: how switching is bought online in energy, telco and banking, in Greece and outside it</li><li>The target journey designed end to end: tariff selection, qualification, contract, signature</li><li>The lead qualification and routing model: which lead is worth what, who takes it, in what order</li><li>Two or three journey approaches, wireframed</li></ul></div>
-    <div class="card"><span class="wk-h">Week 3 &middot; Decide &amp; build</span><b>Decisions, then build.</b><ul class="kd"><li>One day with the core team: features in, features out, decided and written down</li><li>The inbound sale blueprint: front stage, back stage, support</li><li>The prototype built against those decisions, on real tariffs</li></ul></div>
+    <div class="card"><span class="wk-h">Week 3 &middot; Decide &amp; build</span><b>Decisions, then build.</b><ul class="kd"><li>The morning of the day together: features in, features out, decided and written down</li><li>The inbound sale blueprint: front stage, back stage, support</li><li>The prototype built against those decisions, on real tariffs</li></ul></div>
     <div class="card"><span class="wk-h">Week 4 &middot; Review &amp; plan</span><b>Tested, and costed.</b><ul class="kd"><li>The prototype, clickable end to end, tested with real customers and refined on what they do</li><li>A build brief: what production costs, what it integrates with, what legal and IT must clear first</li><li>The measurement plan: the funnel metrics, the baseline as measured in week one, the target</li></ul></div>
   </div>
   <div class="bar" style="font-size:19px">From Volton: one named owner on the marketing side who decides rather than attends, one IT contact, and the week-one data.</div>
 </section>
 
-<!-- ================= 18 DELIVERABLES 02 ================= -->
+<!-- ================= 19 DELIVERABLES 02 ================= -->
 <section class="slide grey" data-name="Deliverables 02">
   <div class="pill">Stream 02, The bill</div>
   <h2 class="hl">What lands, week by week. <span class="turn">Ending in a warning a customer understands.</span></h2>
   <div class="cards cols-4">
     <div class="card"><span class="wk-h">Week 1 &middot; Assess</span><b>The calendar, counted.</b><ul class="kd"><li>The billing calendar mapped by zone: when readings land, when settlement bills issue</li><li>Churn timed against that calendar: when customers actually leave, not why they say they do</li><li>The clawback quantified: how often it fires, what it covers, what it costs</li><li>One live sample of each bill type, read as a customer reads it</li></ul></div>
     <div class="card"><span class="wk-h">Week 2 &middot; Design</span><b>The estimate, built.</b><ul class="kd"><li>Benchmark: how other markets handle estimated billing and bill shock</li><li>The settlement estimate model, built on real historic consumption</li><li>The week-ten warning drawn three ways: the message, the channel, the timing</li><li>The redesigned bill event around it, wireframed</li></ul></div>
-    <div class="card"><span class="wk-h">Week 3 &middot; Decide &amp; build</span><b>Decisions, then build.</b><ul class="kd"><li>One day with the core team: which warning ships, what the bill says, what happens to the clawback</li><li>The bill moment redesigned: what the customer sees when the settlement bill lands</li><li>The model and the moment built together, in plain Greek</li></ul></div>
+    <div class="card"><span class="wk-h">Week 3 &middot; Decide &amp; build</span><b>Decisions, then build.</b><ul class="kd"><li>The afternoon of the day together: which warning ships, what the bill says, what happens to the clawback</li><li>The bill moment redesigned: what the customer sees when the settlement bill lands</li><li>The model and the moment built together, in plain Greek</li></ul></div>
     <div class="card"><span class="wk-h">Week 4 &middot; Review &amp; plan</span><b>Scored, and costed.</b><ul class="kd"><li>Accuracy reported against bills already issued, and the warning refined on it</li><li>The action plan: what it takes to run this against the live billing system, and who owns it</li><li>The measures: settlement-month churn, late payment, clawback incidence, call volume</li></ul></div>
   </div>
   <div class="bar" style="font-size:19px">From Volton: one named owner of billing. Today no single person holds it. That decision costs nothing and blocks everything.</div>
 </section>
 
-<!-- ================= 19 WHAT A PROTOTYPE IS ================= -->
+<!-- ================= 20 WHAT A PROTOTYPE IS ================= -->
 <section class="slide" data-name="What a prototype is">
   <div class="pill">Settled before we start</div>
   <h2 class="hl">What a prototype is, <span class="turn">and what it is not.</span></h2>
@@ -656,7 +697,7 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
   <div class="bar">Deciding on a prototype costs a week. Deciding in production costs a quarter.</div>
 </section>
 
-<!-- ================= 20 YOUR INVESTMENT ================= -->
+<!-- ================= 21 YOUR INVESTMENT ================= -->
 <section class="slide ivory" data-name="Your investment">
   <div class="pill">Your investment</div>
   <h2 class="hl">Two streams, priced and run separately. <span class="turn">Either can start without the other.</span></h2>
@@ -698,7 +739,7 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
   <p class="p-foot">All prices exclude VAT. Nothing in these two streams commits Volton to anything that follows them.</p>
 </section>
 
-<!-- ================= 21 CLOSE ================= -->
+<!-- ================= 22 CLOSE ================= -->
 <section class="slide dark" data-name="Close">
   <div class="pill">Next steps, the team</div>
   <h2 class="hl">Two streams. Four weeks. <span class="turn">Both quick wins, both high impact.</span></h2>
