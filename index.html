@@ -401,7 +401,11 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 .slide[data-name="How it runs"] .p-card .num{font-size:38px;margin-bottom:2px}
 .slide[data-name="How it runs"] .p-eyeb{margin-bottom:4px}
 .slide[data-name="How it runs"] .p-note{font-size:13px}
-.slide[data-name="How it runs"] .bar{font-size:17.5px;padding:14px 22px;line-height:1.35}
+.slide[data-name="How it runs"] .tl{margin-top:18px}
+.slide[data-name="How it runs"] .bar{font-size:17px;padding:15px 20px;line-height:1.38;margin-top:0}
+.slide[data-name="How it runs"] .bar b{font-family:var(--rb-sans);font-weight:700;font-size:15px}
+.pnot{border:1.5px dashed rgba(18,18,18,.3);border-radius:14px;padding:14px 16px;font-size:13px;line-height:1.42;opacity:.72}
+.pnot .ctag{margin-bottom:5px}
 .slide[data-name="The day"]{padding:42px 76px 34px}
 .slide[data-name="The day"] .pill{margin-bottom:18px}
 .slide[data-name="The day"] .w-card{background:var(--rb-offwhite)}
@@ -632,7 +636,7 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 <!-- ================= 17 HOW IT RUNS ================= -->
 <section class="slide ivory" data-name="How it runs">
   <div class="pill">How it runs, and what it costs</div>
-  <h2 class="hl">One day to open it. <span class="turn">Four weeks to build it.</span></h2>
+  <h2 class="hl">One day to open it. <span class="turn">Four weeks to build them both.</span></h2>
   <p class="lead">One day together at the start, on a journey we have already prepared. Then four weeks of parallel work, both streams at once, by two teams on two sets of data.</p>
   <div class="tl" style="grid-template-columns:repeat(5,1fr)">
     <div class="tl-line"></div>
@@ -654,7 +658,10 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
       <span class="p-note" style="margin-top:0;padding-top:0;border-top:0"><b>From Volton:</b> one named owner of billing. The single biggest dependency in this stream.</span>
     </div>
   </div>
-  <div class="bar" style="margin-top:16px;font-size:19px">Out of each: an interactive prototype on dummy data, end to end, on your brand guidelines and a live URL, with a high level spec and a deployment roadmap beside it.</div>
+  <div class="two" style="grid-template-columns:1.5fr .5fr;gap:18px;margin-top:16px;align-items:stretch">
+    <div class="bar"><b>Out of each stream:</b> an interactive prototype, running on dummy data, that takes a customer through the experience end to end. It follows Volton&rsquo;s brand guidelines on a design system we build for it, it lives on a live URL your team can open and use, and it comes with a high level spec and a deployment roadmap beside it.</div>
+    <div class="pnot"><span class="ctag">One thing to keep in mind</span>It is built to settle the flows and the functionality before anyone writes production code. The integrations are simulated and the data is sample data, so the live connections, the scale and the hardening come after, with IT.</div>
+  </div>
   <p class="p-foot" style="margin-top:10px">All prices exclude VAT. Either stream can start without the other.</p>
 </section>
 
