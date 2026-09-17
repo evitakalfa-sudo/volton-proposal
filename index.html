@@ -206,6 +206,60 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 .person span{font-size:14px;color:rgba(251,250,247,.72)}
 .grouplab{display:flex;align-items:baseline;gap:8px;font:600 11px/1 var(--rb-sans);letter-spacing:.12em;text-transform:uppercase;opacity:.85;padding-bottom:2px;border-bottom:1px solid rgba(251,250,247,.28)}
 .grouplab i{font-style:normal;letter-spacing:.02em;text-transform:none;font-weight:400;font-size:12px;opacity:.8}
+/* comments */
+.chrome .cbtn{display:inline-flex;align-items:center;gap:7px}
+.chrome .cbtn .cnt{background:var(--rb-blue);color:var(--rb-offwhite);border-radius:999px;padding:3px 7px;font:700 11px/1 var(--rb-sans);min-width:18px;text-align:center}
+.chrome .cbtn .cnt:empty{display:none}
+.deck{transition:right .25s ease}
+.deck.copen{right:380px}
+.cpanel{position:fixed;top:0;right:0;bottom:var(--chrome);width:380px;max-width:92vw;background:var(--rb-offwhite);color:var(--rb-black);box-shadow:-12px 0 40px rgba(0,0,0,.35);transform:translateX(100%);transition:transform .25s ease;display:flex;flex-direction:column;font:14px/1.45 var(--rb-sans);z-index:50}
+.cpanel.open{transform:none}
+.cpanel header{padding:16px 18px 12px;border-bottom:1px solid rgba(18,18,18,.12);display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.cpanel header b{font-family:var(--rb-serif);font-weight:500;font-size:20px;line-height:1.15;display:block}
+.cpanel header small{display:block;font-size:12px;opacity:.65;margin-top:4px}
+.cpanel .close{background:transparent;border:1px solid rgba(18,18,18,.25);color:var(--rb-black);border-radius:999px;width:32px;height:32px;cursor:pointer;font-size:18px;line-height:1;flex:0 0 auto}
+.cpanel .warn{background:var(--rb-yellow);font-size:12.5px;line-height:1.4;padding:9px 18px;border-bottom:1px solid rgba(18,18,18,.1)}
+.cpanel .list{flex:1;overflow:auto;padding:6px 18px 12px}
+.cmt{padding:11px 0 9px;border-bottom:1px solid rgba(18,18,18,.08)}
+.cmt .who{display:flex;justify-content:space-between;gap:8px;font-size:12px;margin-bottom:3px}
+.cmt .who b{font-weight:700;font-size:13px}
+.cmt .who time{opacity:.55;white-space:nowrap}
+.cmt .txt{white-space:pre-wrap;overflow-wrap:anywhere}
+.cmt .reply{background:none;border:0;color:var(--rb-blue);font:600 12px var(--rb-sans);letter-spacing:.04em;cursor:pointer;padding:5px 0 0}
+.cmt.child{margin-left:14px;padding-left:12px;border-left:2px solid var(--rb-blue);border-bottom:0;padding-top:8px;padding-bottom:6px}
+.cmt.child+.cmt:not(.child){border-top:1px solid rgba(18,18,18,.08)}
+.cpanel .empty{opacity:.6;padding:28px 0;text-align:center}
+.cpanel form{border-top:1px solid rgba(18,18,18,.12);padding:12px 18px 16px;display:flex;flex-direction:column;gap:8px;background:var(--rb-ivory)}
+.cpanel .replying{font-size:12.5px;display:flex;justify-content:space-between;color:var(--rb-blue)}
+.cpanel .replying button{background:none;border:0;color:inherit;cursor:pointer;text-decoration:underline;font:inherit;padding:0}
+.cpanel input,.cpanel textarea{font:14px/1.4 var(--rb-sans);border:1px solid rgba(18,18,18,.2);border-radius:10px;padding:9px 11px;background:var(--rb-offwhite);color:var(--rb-black)}
+.cpanel textarea{min-height:78px;resize:vertical}
+.cpanel input:focus,.cpanel textarea:focus{outline:2px solid var(--rb-blue);outline-offset:0;border-color:transparent}
+.cpanel .row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.cpanel .note{font-size:12px;opacity:.6}
+.cpanel .send{background:var(--rb-blue);color:var(--rb-offwhite);border:0;border-radius:999px;padding:9px 16px;font:600 13px var(--rb-sans);cursor:pointer;min-height:36px}
+.cpanel .send[disabled]{opacity:.5;cursor:default}
+.cpanel .err{color:#8a1c1c;font-size:12.5px}
+@media print{.cpanel,.chrome .cbtn{display:none!important}}
+/* comment pins on the slide */
+.pins{position:absolute;inset:0;pointer-events:none;z-index:5}
+.pins.hidden{display:none}
+.pin{position:absolute;transform:translate(-50%,-50%);width:26px;height:26px;border-radius:50% 50% 50% 4px;background:var(--rb-blue);color:var(--rb-offwhite);border:2px solid var(--rb-offwhite);box-shadow:0 2px 8px rgba(0,0,0,.3);font:700 12px/22px var(--rb-sans);text-align:center;cursor:pointer;pointer-events:auto;padding:0;transition:transform .15s}
+.pin.hot{transform:translate(-50%,-50%) scale(1.25);box-shadow:0 0 0 6px rgba(42,26,252,.28),0 2px 8px rgba(0,0,0,.3)}
+.pin.pending{background:var(--rb-black);animation:pinpulse 1.2s ease-in-out infinite}
+@keyframes pinpulse{50%{box-shadow:0 0 0 9px rgba(42,26,252,.25)}}
+.stage.pinmode,.stage.pinmode .slide,.stage.pinmode .slide *{cursor:crosshair!important}
+.selchip{position:fixed;z-index:60;background:var(--rb-black);color:var(--rb-offwhite);border:0;border-radius:999px;padding:7px 12px;font:600 12px var(--rb-sans);cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.cmt .n{display:inline-block;min-width:18px;height:18px;border-radius:50% 50% 50% 3px;background:var(--rb-blue);color:var(--rb-offwhite);font:700 11px/18px var(--rb-sans);text-align:center;margin-right:6px;vertical-align:1px}
+.cmt .quote{font-style:italic;border-left:2px solid rgba(42,26,252,.45);padding-left:8px;margin:2px 0 5px;opacity:.8;font-size:13px}
+.cmt.hot{background:var(--rb-yellow);margin:0 -18px;padding-left:18px;padding-right:18px;border-radius:8px}
+.cpanel .anchorbar{display:flex;gap:8px;align-items:center;font-size:12.5px;flex-wrap:wrap;min-height:30px}
+.cpanel .anchorbar .pinbtn{background:var(--rb-offwhite);border:1px solid rgba(18,18,18,.25);border-radius:999px;padding:6px 11px;font:600 12px var(--rb-sans);cursor:pointer}
+.cpanel .anchorbar .pinbtn.on{background:var(--rb-black);color:var(--rb-offwhite);border-color:var(--rb-black)}
+.cpanel .anchorbar .pinned{color:var(--rb-blue);font-weight:600}
+.cpanel .anchorbar .pinned q{font-weight:400;font-style:italic;opacity:.8}
+.cpanel .lnk{font:500 12px var(--rb-sans);background:none;border:0;color:var(--rb-blue);cursor:pointer;padding:0;text-decoration:underline}
+@media print{.pins,.selchip{display:none!important}}
 /* footers inside slide */
 .foot{margin-top:auto;font-size:13px;opacity:.6}
 /* chrome */
@@ -662,12 +716,26 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 </svg></div><span>hello@reborrn.com</span></div>
 </section>
 
+<div class="pins" id="pins"></div>
 </div></div>
 
+<aside class="cpanel" id="cpanel" aria-label="Comments" aria-hidden="true">
+  <header><div><b id="ctitle">Comments</b><small id="csub"></small><small><button type="button" class="lnk" id="cpintoggle">Hide pins on the slide</button></small></div><button class="close" id="cclose" aria-label="Close comments">&times;</button></header>
+  <div class="warn" id="cwarn" hidden></div>
+  <div class="list" id="clist"></div>
+  <form id="cform" autocomplete="off">
+    <div class="replying" id="creplying" hidden><span>Replying to <b id="creplyto"></b></span><button type="button" id="ccancel">cancel</button></div>
+    <input id="cname" placeholder="Your name" maxlength="60" required autocomplete="name">
+    <div class="anchorbar"><button type="button" class="pinbtn" id="cpinbtn" title="Then click the spot on the slide">Pin a spot on the slide</button><span class="pinned" id="canchor" hidden></span><button type="button" class="lnk" id="cunpin" hidden>remove</button></div>
+    <textarea id="ctext" placeholder="Write a comment on this slide, or select a sentence on the slide first" maxlength="2000" required></textarea>
+    <div class="err" id="cerr" hidden></div>
+    <div class="row"><span class="note">Everyone with the link can see it.</span><button class="send" id="csend" type="submit">Post</button></div>
+  </form>
+</aside>
 <div class="chrome">
   <div class="prog" id="prog"></div>
   <span id="name"></span>
-  <div class="nav"><button id="prev" aria-label="Previous slide">←</button><span id="counter"></span><button id="next" aria-label="Next slide">→</button></div>
+  <div class="nav"><button id="cbtn" class="cbtn" aria-label="Comments on this slide" aria-expanded="false">Comments <span class="cnt" id="ccount"></span></button><button id="prev" aria-label="Previous slide">←</button><span id="counter"></span><button id="next" aria-label="Next slide">→</button></div>
 </div>
 
 <script>
@@ -688,16 +756,130 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
     document.getElementById('counter').textContent=(i+1)+' / '+slides.length;
     document.getElementById('name').textContent=parts[i]||'';
     document.getElementById('prog').style.width=((i+1)/slides.length*100)+'%';
+    if(window.volCommentsOnSlide)window.volCommentsOnSlide(i);
     try{localStorage.setItem('volton-deck-slide',String(i))}catch(e){}
   }
   document.getElementById('prev').onclick=function(){show(i-1)};
   document.getElementById('next').onclick=function(){show(i+1)};
-  addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){show(i+1)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){show(i-1)}else if(e.key==='Home'){show(0)}else if(e.key==='End'){show(slides.length-1)}});
+  addEventListener('keydown',function(e){if(/^(INPUT|TEXTAREA)$/.test((e.target&&e.target.tagName)||''))return;if(e.key==='c'||e.key==='C'){document.getElementById('cbtn').click();return}if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){show(i+1)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){show(i-1)}else if(e.key==='Home'){show(0)}else if(e.key==='End'){show(slides.length-1)}});
   stage.addEventListener('click',function(e){if(e.target.closest('a,button'))return;var r=stage.getBoundingClientRect();(e.clientX-r.left)>r.width*0.5?show(i+1):show(i-1)});
   addEventListener('resize',fit);fit();
   var start=0;try{start=parseInt(localStorage.getItem('volton-deck-slide')||'0',10)||0}catch(e){}
   show(start);
 })();
 </script>
+
+<script>
+// Comments: shared, per slide, with replies. A comment can be pinned to a spot on the slide
+// (click "Pin a spot", then click the slide) or to a sentence (select text on the slide, then
+// click the Comment chip). Names are self-declared and remembered on this browser.
+(function(){
+  var API='/api/comments', POLL_OPEN=15000, POLL_CLOSED=60000;
+  var $=function(id){return document.getElementById(id)};
+  var deck=document.querySelector('.deck'), stage=$('stage'), pinsEl=$('pins'), slides=[].slice.call(document.querySelectorAll('.slide'));
+  var panel=$('cpanel'), list=$('clist'), form=$('cform'), nameEl=$('cname'), textEl=$('ctext'), sendBtn=$('csend'), err=$('cerr'), warn=$('cwarn');
+  var comments=[], cur=0, replyTo=null, open=false, available=true, timer=null;
+  var pending=null, pinMode=false, hot=null, pinsHidden=false, chip=null, selPending=null;
+  try{ nameEl.value=localStorage.getItem('volton-comment-name')||''; pinsHidden=localStorage.getItem('volton-pins')==='hidden'; }catch(e){}
+
+  function fmt(ts){var d=new Date(ts),diff=(Date.now()-ts)/60000;if(diff<1)return 'just now';if(diff<60)return Math.round(diff)+' min ago';return d.toLocaleString('en-GB',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});}
+  function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;}
+  function forSlide(n){return comments.filter(function(c){return c.slide===n});}
+  function toStage(cx,cy){var r=stage.getBoundingClientRect();return {x:Math.max(0,Math.min(100,(cx-r.left)/r.width*100)),y:Math.max(0,Math.min(100,(cy-r.top)/r.height*100))};}
+
+  function render(){
+    var n=cur+1, mine=forSlide(n), roots=mine.filter(function(c){return !c.parentId}).sort(function(a,b){return a.ts-b.ts});
+    var num={}; roots.filter(function(c){return c.anchor}).forEach(function(c,i){num[c.id]=i+1});   // pins are numbered 1, 2, 3 in order of posting
+    $('ctitle').textContent='Slide '+n+' · '+(slides[cur].getAttribute('data-name')||'');
+    $('csub').textContent=(mine.length?mine.length+(mine.length===1?' comment':' comments')+' here':'No comments here yet')+' · '+comments.length+' in the deck';
+    $('ccount').textContent=mine.length?String(mine.length):'';
+    list.textContent='';
+    if(!available){ list.appendChild(el('div','empty','Comments work on the volton-proposal.reborrn.works link.')); renderPins(roots,num); return; }
+    if(!mine.length){ list.appendChild(el('div','empty','Be the first to comment on this slide. Pin a spot, or select a sentence on the slide.')); renderPins(roots,num); return; }
+    roots.forEach(function(c){
+      list.appendChild(item(c,false,num[c.id]));
+      mine.filter(function(r){return r.parentId===c.id}).sort(function(a,b){return a.ts-b.ts}).forEach(function(r){list.appendChild(item(r,true))});
+    });
+    renderPins(roots,num);
+    if(hot){var h=list.querySelector('[data-id="'+hot+'"]'); if(h) h.scrollIntoView({block:'center'});} else list.scrollTop=list.scrollHeight;
+  }
+  function item(c,child,n){
+    var d=el('div','cmt'+(child?' child':'')+(c.id===hot?' hot':'')); d.dataset.id=c.id;
+    var who=el('div','who'), left=el('span'), t=el('time',null,fmt(c.ts)); t.dateTime=new Date(c.ts).toISOString();
+    if(!child&&c.anchor){var nb=el('span','n',String(n)); nb.title='Show on the slide'; left.appendChild(nb);}
+    left.appendChild(el('b',null,c.author)); who.appendChild(left); who.appendChild(t); d.appendChild(who);
+    if(c.quote) d.appendChild(el('div','quote','“'+c.quote+'”'));
+    d.appendChild(el('div','txt',c.text));
+    if(!child){var b=el('button','reply','Reply');b.type='button';b.onclick=function(ev){ev.stopPropagation();replyTo=c;$('creplyto').textContent=c.author;$('creplying').hidden=false;clearPending();textEl.focus();};d.appendChild(b);}
+    if(c.anchor){ d.style.cursor='pointer'; d.onclick=function(){setHot(c.id);}; }
+    return d;
+  }
+  function renderPins(roots,num){
+    pinsEl.textContent=''; pinsEl.classList.toggle('hidden',pinsHidden);
+    roots.forEach(function(c){ if(!c.anchor)return; var p=el('button','pin'+(c.id===hot?' hot':''),String(num[c.id])); p.type='button'; p.style.left=c.anchor.x+'%'; p.style.top=c.anchor.y+'%'; p.title=c.author+': '+c.text.slice(0,80); p.onclick=function(ev){ev.stopPropagation(); if(!open)setOpen(true); setHot(c.id);}; pinsEl.appendChild(p); });
+    if(pending&&pending.anchor){var q=el('button','pin pending','+'); q.type='button'; q.style.left=pending.anchor.x+'%'; q.style.top=pending.anchor.y+'%'; q.title='Your new comment goes here'; pinsEl.appendChild(q);}
+    $('cpintoggle').textContent=pinsHidden?'Show pins on the slide':'Hide pins on the slide';
+  }
+  function setHot(id){ hot=(hot===id?null:id); render(); }
+
+  // pin a spot
+  function setPinMode(v){ pinMode=v; stage.classList.toggle('pinmode',v); $('cpinbtn').classList.toggle('on',v); $('cpinbtn').textContent=v?'Now click the spot on the slide':'Pin a spot on the slide'; }
+  function setPending(p){ pending=p; var a=$('canchor'); a.hidden=!p; $('cunpin').hidden=!p; a.textContent=''; if(p){ a.appendChild(document.createTextNode(p.quote?'Pinned to: ':'Pinned to a spot on the slide')); if(p.quote){a.appendChild(el('q',null,p.quote.length>70?p.quote.slice(0,70)+'…':p.quote));} } render(); }
+  function clearPending(){ setPending(null); setPinMode(false); }
+  $('cpinbtn').onclick=function(){ setPinMode(!pinMode); if(pinMode) hideChip(); };
+  $('cunpin').onclick=function(){ clearPending(); };
+  stage.addEventListener('click',function(e){ if(!pinMode)return; e.stopImmediatePropagation(); e.preventDefault(); var pt=toStage(e.clientX,e.clientY); setPinMode(false); setPending({anchor:pt,quote:null}); textEl.focus(); },true);
+  $('cpintoggle').onclick=function(){ pinsHidden=!pinsHidden; try{localStorage.setItem('volton-pins',pinsHidden?'hidden':'shown')}catch(e){} render(); };
+
+  // select a sentence
+  function hideChip(){ if(chip){chip.remove();chip=null;} selPending=null; }
+  function onSelect(){
+    var sel=window.getSelection(); if(!sel||sel.isCollapsed||!sel.rangeCount) return;
+    var text=sel.toString().replace(/\s+/g,' ').trim(); if(text.length<3) return;
+    var node=sel.anchorNode&&sel.anchorNode.nodeType===3?sel.anchorNode.parentNode:sel.anchorNode; if(!node||!slides[cur].contains(node)) return;
+    var r=sel.getRangeAt(0).getBoundingClientRect(); if(!r.width) return;
+    selPending={anchor:toStage(r.left+r.width/2,r.top+r.height/2),quote:text.slice(0,240)};
+    if(!chip){ chip=el('button','selchip','Comment on this'); chip.type='button'; chip.onmousedown=function(ev){ev.preventDefault();}; chip.onclick=function(ev){ev.stopPropagation(); var p=selPending; hideChip(); if(!open)setOpen(true); setPinMode(false); setPending(p); try{window.getSelection().removeAllRanges()}catch(e){} textEl.focus(); }; document.body.appendChild(chip); }
+    chip.style.left=Math.min(window.innerWidth-170,Math.max(8,r.right+8))+'px'; chip.style.top=Math.max(8,r.top-38)+'px';
+  }
+  stage.addEventListener('mouseup',function(){ setTimeout(onSelect,10); });
+  document.addEventListener('mousedown',function(e){ if(chip&&e.target!==chip) hideChip(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ if(pinMode)setPinMode(false); hideChip(); } });
+
+  // data
+  function load(){
+    return fetch(API,{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).then(function(d){
+      available=true; comments=d.comments||[];
+      warn.hidden=!!d.persistent; if(!d.persistent) warn.textContent='This deploy has no comment store yet: comments are kept only until the next deploy.';
+      form.hidden=false; render();
+    }).catch(function(){ available=false; comments=[]; form.hidden=true; render(); });
+  }
+  function schedule(){ clearTimeout(timer); timer=setTimeout(function(){load().then(schedule)}, open?POLL_OPEN:POLL_CLOSED); }
+  function setOpen(v){
+    open=v; panel.classList.toggle('open',v); deck.classList.toggle('copen',v);
+    panel.setAttribute('aria-hidden',String(!v)); $('cbtn').setAttribute('aria-expanded',String(v));
+    window.dispatchEvent(new Event('resize'));
+    if(v){ load().then(schedule); if(!nameEl.value) nameEl.focus(); else textEl.focus(); } else { setPinMode(false); }
+  }
+  $('cbtn').onclick=function(){setOpen(!open)};
+  $('cclose').onclick=function(){setOpen(false)};
+  $('ccancel').onclick=function(){replyTo=null;$('creplying').hidden=true;};
+  form.onsubmit=function(e){
+    e.preventDefault(); err.hidden=true;
+    var author=nameEl.value.trim(), text=textEl.value.trim();
+    if(!author||!text){ err.textContent='A name and a comment, please.'; err.hidden=false; return; }
+    sendBtn.disabled=true;
+    var body={slide:cur+1,slideName:slides[cur].getAttribute('data-name')||'',parentId:replyTo?replyTo.id:null,author:author,text:text,anchor:(!replyTo&&pending)?pending.anchor:null,quote:(!replyTo&&pending)?pending.quote:null};
+    fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
+      .then(function(r){return r.json().then(function(d){if(!r.ok)throw new Error(d.error||'Could not post.');return d})})
+      .then(function(d){ try{localStorage.setItem('volton-comment-name',author)}catch(e){} comments.push(d.comment); textEl.value=''; replyTo=null; $('creplying').hidden=true; hot=d.comment.anchor?d.comment.id:null; clearPending(); })
+      .catch(function(x){ err.textContent=x.message; err.hidden=false; })
+      .then(function(){ sendBtn.disabled=false; });
+  };
+  window.volCommentsOnSlide=function(i){ cur=i; replyTo=null; hot=null; $('creplying').hidden=true; clearPending(); hideChip(); };
+  load().then(schedule);
+})();
+</script>
+
 
 </body></html>
