@@ -260,6 +260,15 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 .cpanel .anchorbar .pinned{color:var(--rb-blue);font-weight:600}
 .cpanel .anchorbar .pinned q{font-weight:400;font-style:italic;opacity:.8}
 .cpanel .lnk{font:500 12px var(--rb-sans);background:none;border:0;color:var(--rb-blue);cursor:pointer;padding:0;text-decoration:underline}
+.cmt .acts{display:flex;gap:12px;align-items:center;padding-top:5px}
+.cmt .acts .lnk{font:600 12px var(--rb-sans);letter-spacing:.04em;text-decoration:none}
+.cmt .acts .lnk.danger{color:#8a1c1c}
+.cmt .who .ed{opacity:.55;font-weight:400;margin-left:6px}
+.cmt.deleted .txt{font-style:italic;opacity:.55}
+.cmt .editor{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+.cmt .editor textarea{font:14px/1.4 var(--rb-sans);border:1px solid rgba(18,18,18,.25);border-radius:10px;padding:8px 10px;min-height:70px;background:var(--rb-offwhite);color:var(--rb-black)}
+.cmt .editor .row{display:flex;gap:8px;justify-content:flex-end}
+.cmt .editor .send{padding:7px 14px;min-height:32px}
 @media print{.pins,.selchip{display:none!important}}
 /* footers inside slide */
 .foot{margin-top:auto;font-size:13px;opacity:.6}
@@ -781,6 +790,8 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
   var panel=$('cpanel'), list=$('clist'), form=$('cform'), nameEl=$('cname'), textEl=$('ctext'), sendBtn=$('csend'), err=$('cerr'), warn=$('cwarn');
   var comments=[], cur=0, replyTo=null, open=false, available=true, timer=null;
   var pending=null, pinMode=false, hot=null, pinsHidden=false, chip=null, selPending=null;
+  var owner=''; try{ owner=localStorage.getItem('volton-comment-owner')||''; if(!owner){ var a=new Uint8Array(16); (window.crypto||{}).getRandomValues?crypto.getRandomValues(a):a.forEach(function(_,i){a[i]=Math.random()*256}); owner=[].map.call(a,function(b){return ('0'+b.toString(16)).slice(-2)}).join(''); localStorage.setItem('volton-comment-owner',owner);} }catch(e){}
+  function api(url,opts){ opts=opts||{}; opts.headers=Object.assign({'X-Owner':owner},opts.headers||{}); opts.cache='no-store'; return fetch(url,opts); }
   try{ nameEl.value=localStorage.getItem('volton-comment-name')||''; pinsHidden=localStorage.getItem('volton-pins')==='hidden'; }catch(e){}
 
   function fmt(ts){var d=new Date(ts),diff=(Date.now()-ts)/60000;if(diff<1)return 'just now';if(diff<60)return Math.round(diff)+' min ago';return d.toLocaleString('en-GB',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});}
@@ -790,7 +801,7 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 
   function render(){
     var n=cur+1, mine=forSlide(n), roots=mine.filter(function(c){return !c.parentId}).sort(function(a,b){return a.ts-b.ts});
-    var num={}; roots.filter(function(c){return c.anchor}).forEach(function(c,i){num[c.id]=i+1});   // pins are numbered 1, 2, 3 in order of posting
+    var num={}; roots.filter(function(c){return c.anchor&&!c.deleted}).forEach(function(c,i){num[c.id]=i+1});   // pins are numbered 1, 2, 3 in order of posting
     $('ctitle').textContent='Slide '+n+' · '+(slides[cur].getAttribute('data-name')||'');
     $('csub').textContent=(mine.length?mine.length+(mine.length===1?' comment':' comments')+' here':'No comments here yet')+' · '+comments.length+' in the deck';
     $('ccount').textContent=mine.length?String(mine.length):'';
@@ -805,15 +816,38 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
     if(hot){var h=list.querySelector('[data-id="'+hot+'"]'); if(h) h.scrollIntoView({block:'center'});} else list.scrollTop=list.scrollHeight;
   }
   function item(c,child,n){
-    var d=el('div','cmt'+(child?' child':'')+(c.id===hot?' hot':'')); d.dataset.id=c.id;
+    var d=el('div','cmt'+(child?' child':'')+(c.id===hot?' hot':'')+(c.deleted?' deleted':'')); d.dataset.id=c.id;
     var who=el('div','who'), left=el('span'), t=el('time',null,fmt(c.ts)); t.dateTime=new Date(c.ts).toISOString();
     if(!child&&c.anchor){var nb=el('span','n',String(n)); nb.title='Show on the slide'; left.appendChild(nb);}
-    left.appendChild(el('b',null,c.author)); who.appendChild(left); who.appendChild(t); d.appendChild(who);
+    left.appendChild(el('b',null,c.deleted?'Deleted':c.author)); if(c.edited&&!c.deleted) left.appendChild(el('span','ed','(edited)'));
+    who.appendChild(left); who.appendChild(t); d.appendChild(who);
     if(c.quote) d.appendChild(el('div','quote','“'+c.quote+'”'));
-    d.appendChild(el('div','txt',c.text));
-    if(!child){var b=el('button','reply','Reply');b.type='button';b.onclick=function(ev){ev.stopPropagation();replyTo=c;$('creplyto').textContent=c.author;$('creplying').hidden=false;clearPending();textEl.focus();};d.appendChild(b);}
+    var txt=el('div','txt',c.deleted?'This comment was deleted.':c.text); d.appendChild(txt);
+    if(!c.deleted){
+      var acts=el('div','acts');
+      if(!child){var b=el('button','reply','Reply');b.type='button';b.onclick=function(ev){ev.stopPropagation();replyTo=c;$('creplyto').textContent=c.author;$('creplying').hidden=false;clearPending();textEl.focus();};acts.appendChild(b);}
+      if(c.mine){
+        var e=el('button','lnk','Edit'); e.type='button'; e.onclick=function(ev){ev.stopPropagation(); openEditor(d,c,txt,acts);}; acts.appendChild(e);
+        var x=el('button','lnk danger','Delete'); x.type='button'; x.onclick=function(ev){ev.stopPropagation(); if(!confirm('Delete this comment?'))return; api(API+'?id='+encodeURIComponent(c.id),{method:'DELETE'}).then(function(r){return r.json().then(function(j){if(!r.ok)throw new Error(j.error||'Could not delete.');return j})}).then(function(j){ if(j.removed){ comments=comments.filter(function(k){return k.id!==c.id}); } else if(j.comment){ comments=comments.map(function(k){return k.id===c.id?j.comment:k}); } if(hot===c.id)hot=null; render(); }).catch(function(er){ err.textContent=er.message; err.hidden=false; }); }; acts.appendChild(x);
+      }
+      d.appendChild(acts);
+    }
     if(c.anchor){ d.style.cursor='pointer'; d.onclick=function(){setHot(c.id);}; }
     return d;
+  }
+  function openEditor(card,c,txt,acts){
+    if(card.querySelector('.editor'))return;
+    txt.hidden=true; acts.hidden=true;
+    var ed=el('div','editor'), ta=el('textarea'), row=el('div','row'), cancel=el('button','lnk','Cancel'), save=el('button','send','Save');
+    ta.value=c.text; ta.maxLength=2000; cancel.type='button'; save.type='button';
+    ed.onclick=function(ev){ev.stopPropagation();};
+    cancel.onclick=function(){ ed.remove(); txt.hidden=false; acts.hidden=false; };
+    save.onclick=function(){ var v=ta.value.trim(); if(!v)return; save.disabled=true;
+      api(API+'?id='+encodeURIComponent(c.id),{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:v})})
+        .then(function(r){return r.json().then(function(j){if(!r.ok)throw new Error(j.error||'Could not save.');return j})})
+        .then(function(j){ comments=comments.map(function(k){return k.id===c.id?j.comment:k}); render(); })
+        .catch(function(er){ save.disabled=false; err.textContent=er.message; err.hidden=false; }); };
+    row.appendChild(cancel); row.appendChild(save); ed.appendChild(ta); ed.appendChild(row); card.appendChild(ed); ta.focus();
   }
   function renderPins(roots,num){
     pinsEl.textContent=''; pinsEl.classList.toggle('hidden',pinsHidden);
@@ -849,7 +883,7 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 
   // data
   function load(){
-    return fetch(API,{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).then(function(d){
+    return api(API).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).then(function(d){
       available=true; comments=d.comments||[];
       warn.hidden=!!d.persistent; if(!d.persistent) warn.textContent='This deploy has no comment store yet: comments are kept only until the next deploy.';
       form.hidden=false; render();
@@ -873,7 +907,7 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
     if(!author||!text){ err.textContent='A name and a comment, please.'; err.hidden=false; return; }
     sendBtn.disabled=true;
     var body={slide:cur+1,slideName:slides[cur].getAttribute('data-name')||'',parentId:replyTo?replyTo.id:null,author:author,text:text,anchor:(!replyTo&&pending)?pending.anchor:null,quote:(!replyTo&&pending)?pending.quote:null};
-    fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
+    api(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
       .then(function(r){return r.json().then(function(d){if(!r.ok)throw new Error(d.error||'Could not post.');return d})})
       .then(function(d){ try{localStorage.setItem('volton-comment-name',author)}catch(e){} comments.push(d.comment); textEl.value=''; replyTo=null; $('creplying').hidden=true; hot=d.comment.anchor?d.comment.id:null; clearPending(); })
       .catch(function(x){ err.textContent=x.message; err.hidden=false; })
