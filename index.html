@@ -336,6 +336,32 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 .w-room{background:var(--rb-offwhite);border-radius:14px;padding:9px 16px;font-size:13.5px;line-height:1.45;display:flex;gap:12px;align-items:baseline}
 .w-room .w-lbl{white-space:nowrap;padding-top:1px}
 .w-foot{margin-top:7px;font-size:13px;opacity:.6;line-height:1.45}
+
+/* --- Part 4, where we start --- */
+.qh{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.qh > div{display:grid;grid-template-columns:86px 1fr;gap:12px;align-items:baseline;font-size:14.5px;line-height:1.42}
+.qh .lbl{font:600 10.5px/1.7 var(--rb-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--rb-blue)}
+.qh b{display:inline;font-size:inherit;font-weight:700}
+.slide[data-name="Where we start"] .card{padding:22px 24px}
+.slide[data-name="Where we start"] .card > b{font-size:19px;font-family:var(--rb-serif);font-weight:500;line-height:1.2}
+.slide[data-name="Where we start"] .qh b{font-size:inherit;font-family:var(--rb-sans);font-weight:700;display:inline}
+.slide[data-name^="Deliverables"] .cards{gap:12px}
+.slide[data-name^="Deliverables"] .card{padding:15px 17px;font-size:13.5px;line-height:1.38;gap:2px}
+.slide[data-name^="Deliverables"] .card b{font-size:15px;margin-bottom:2px}
+.slide[data-name^="Deliverables"] .kd{font-size:12.8px;line-height:1.35;gap:6px;margin-top:8px}
+.slide[data-name^="Deliverables"] .kd li{padding-left:13px}
+.slide[data-name^="Deliverables"] .kd li::before{width:5px;height:5px}
+.slide[data-name^="Deliverables"] .hl{font-size:38px;margin-bottom:16px}
+.wk-h{display:block;font:600 11px/1 var(--rb-sans);letter-spacing:.13em;text-transform:uppercase;color:var(--rb-blue);margin-bottom:7px}
+.slide[data-name="What a prototype is"] .card{padding:24px 26px}
+.slide[data-name="What a prototype is"] .kd{font-size:15px;gap:9px;margin-top:12px}
+.slide[data-name="What a prototype is"] .card.dashed .kd li::before{background:rgba(18,18,18,.4)}
+.slide[data-name="The four weeks"] .tl-txt{font-size:14px}
+.slide[data-name="The four weeks"] .tl-txt b{font-size:16px}
+.slide[data-name="The four weeks"] .dlv{font-size:12.5px}
+.slide[data-name="Your investment"] .p-card .kd{font-size:13.5px}
+.slide[data-name="Close"] .lead{font-size:18.5px;margin-bottom:18px;max-width:900px}
+.slide[data-name="Close"] .hl{margin-bottom:16px}
 </style>
 
 <div class="deck"><div class="stage" id="stage">
@@ -444,9 +470,9 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 <!-- ================= 7 WAY OF WORKING ================= -->
 <section class="slide" data-name="Way of working">
   <div class="pill">How this runs</div>
-  <h2 class="hl">Diagnose. Decide in one 58:hours methodology. <span class="turn">Run four streams.</span></h2>
-  <p class="lead">Count first. Decide in one room. Run four streams in parallel from the first three months, delivering every month.</p>
-  <div class="spine"><div class="card"><div class="num">0</div><b>Diagnose.</b><span>Fast: weeks, not months. Your base, your bill, your channels, the market and the stores. September.</span></div><div class="farrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></div><div class="card"><div class="num">1</div><b>Decide.</b><span>Early October, one 58:hours methodology. Out of the room: the offering architecture and the product packages.</span><span class="small" style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap"><span style="background:var(--rb-blue);color:var(--rb-offwhite);border-radius:999px;padding:4px 10px">58:hours methodology</span></span></div><div class="farrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></div><div class="card"><div class="num">2</div><b>Run.</b><span>All four streams start inside the first three months and run in parallel, each from what the room decided.</span><div class="mini4"><span><i>1</i>The offering</span><span><i>2</i>Go-to-market</span><span><i>3</i>The adviser network</span><span><i>4</i>The experience</span></div></div><div class="farrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></div><div class="card"><div class="num">3</div><b>After six months.</b><span>The pilot results decide what rolls out to the whole base, customers and advisers. Then the proven way to win customers is pointed at the biggest pool, ΔΕΗ's, and business becomes a strategic goal in its own right.</span></div></div>
+  <h2 class="hl">Start with two. <span class="turn">Prove them. Then build the rest.</span></h2>
+  <p class="lead">Nobody is asked to buy six months of transformation on trust. Two streams start now, four weeks, in parallel &mdash; and everything after that is decided on what they produce.</p>
+  <div class="spine"><div class="card"><div class="num">0</div><b>Start with two.</b><span>The two things a customer can tell apart tomorrow: that nobody can buy online, and that the bill arrives without warning. Four weeks each, run side by side.</span></div><div class="farrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></div><div class="card"><div class="num">1</div><b>Prove it.</b><span>Two working prototypes, tested, with the measured as-is underneath them and the decisions written down.</span><span class="small" style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap"><span style="background:var(--rb-blue);color:var(--rb-offwhite);border-radius:999px;padding:4px 10px">58:hours methodology</span></span></div><div class="farrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></div><div class="card"><div class="num">2</div><b>Build what survived.</b><span>Production is scoped on the prototypes, not on assumptions. What did not survive the four weeks does not get built.</span></div><div class="farrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></div><div class="card"><div class="num">3</div><b>Then the rest, in order.</b><span>The four streams that follow are sized and sequenced on results, in the order the evidence justifies &mdash; not all at once, and not on trust.</span><div class="mini4"><span><i>1</i>The offering</span><span><i>2</i>Go-to-market</span><span><i>3</i>The adviser network</span><span><i>4</i>The experience</span></div></div></div>
   <p class="foot"></p>
 </section>
 
@@ -454,41 +480,7 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 <section class="slide dark divider" data-name="Part 3">
   <div class="ghost">3</div>
   <div class="tag">Part 3</div>
-  <h2 class="hl">How this runs.</h2>
-</section>
-
-<!-- ================= 8 DIAGNOSIS ================= -->
-<section class="slide ivory" data-name="Diagnosis">
-  <div class="pill">Step 0, Diagnose</div>
-  <h2 class="hl">We do not build on assumptions. <span class="turn">September is for counting.</span></h2>
-  <p class="lead">A fast diagnosis, in weeks, not months. September sizes everything that follows: the base, the bill, what each channel costs and earns. Part of the market work has started. Every channel is diagnosed on its own, with interviews and live shadowing of how a sale actually happens.</p>
-  <div class="cards cols-5">
-<div class="card"><b>The base.</b><span class="small">Supply points, accounts, churn split into who left and who you let go, margin by product.</span></div>
-<div class="card"><b>The bill.</b><span class="small">The clawback, the discount taken back on a late payment: how often, how much.</span></div>
-<div class="card"><b>The channels.</b><span class="small">Each one on its own: the funnel line by line, commission against customer value, interviews and live shadowing.</span></div>
-<div class="card" style="position:relative"><span class="small" style="position:absolute;top:12px;right:12px;background:var(--rb-blue);color:var(--rb-offwhite);border-radius:999px;padding:3px 9px;font-size:11px;letter-spacing:.08em;text-transform:uppercase">Started</span><b>The market.</b><span class="small">Eleven months of regulator meter data, competitors priced like for like, public reviews.</span></div>
-<div class="card"><b>The stores.</b><span class="small">Market visit, mystery shopping.</span></div></div>
-  <div class="bar" style="margin-top:18px">We check before we build. Every stream is sized on what September finds.</div>
-</section>
-
-<!-- ================= 9 THE TWO 58s ================= -->
-<section class="slide ivory" data-name="The 58:hours methodology">
-  <div class="pill">Step 1, Decide</div>
-  <h2 class="hl">One room in early October. <span class="turn">We leave it with the offering decided.</span></h2>
-  <p class="lead" style="margin-bottom:16px">One 58:hours methodology with Volton's key decision makers in the room and the diagnosis on the table. Draft agenda, high level.</p>
-  <div class="two" style="margin-top:0;grid-template-columns:1.05fr .95fr;gap:24px">
-    <div class="rows" style="margin-top:0;gap:9px">
-<div class="row" style="padding:12px 18px;font-size:15px;background:var(--rb-offwhite)"><div class="n" style="font-size:28px">1</div><div><b style="font-size:16px">The evidence.</b> What September found: the base, the bill, the channels.</div></div>
-<div class="row" style="padding:12px 18px;font-size:15px;background:var(--rb-offwhite)"><div class="n" style="font-size:28px">2</div><div><b style="font-size:16px">The offering.</b> Products, naming, the hero product, the proposition.</div></div>
-<div class="row" style="padding:12px 18px;font-size:15px;background:var(--rb-offwhite)"><div class="n" style="font-size:28px">3</div><div><b style="font-size:16px">Bundles and cross-selling.</b> What Volton can bundle and cross-sell, and in what order.</div></div>
-<div class="row" style="padding:12px 18px;font-size:15px;background:var(--rb-offwhite)"><div class="n" style="font-size:28px">4</div><div><b style="font-size:16px">Channels.</b> What every channel sells, and what it earns.</div></div>
-    </div>
-    <div class="cards" style="grid-template-columns:1fr;margin-top:0;gap:9px">
-<div class="card" style="background:var(--rb-blue);color:var(--rb-offwhite);padding:14px 18px"><span class="ctag" style="color:var(--rb-offwhite)"><svg class="tg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>Out of the room: deliverables</span><span>The offering architecture. The product packages. A digital prototype. All usable at once, and a base for the rebranding campaign that follows.</span></div>
-<div class="card deliv" style="padding:14px 18px"><span class="ctag">Started as a skeleton, finished in the streams</span><span>Channel playbook · commission architecture · synergy mapping · the end-to-end online acquisition journey, in outline.</span></div>
-<div class="card" style="background:var(--rb-cyan);border-left:3px solid var(--rb-blue);padding:14px 18px"><span class="ctag" style="color:var(--rb-blue)">Who is in the room</span><span>Volton's key decision makers: the Energy Unit Lead with the commercial, marketing and customer experience leads. With them, REBORRN's consultants and makers.</span></div>
-    </div>
-  </div>
+  <h2 class="hl">What can change.</h2>
 </section>
 
 <!-- ================= 10 STREAM 1 ================= -->
@@ -551,16 +543,17 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 
 <!-- ================= 14 TIMELINE ================= -->
 <section class="slide ivory" data-name="Timeline">
-  <div class="pill">The timeline</div>
-  <h2 class="hl">All four streams are running by November. <span class="turn">In parallel, each delivering every month.</span></h2>
+  <div class="pill">The whole programme, for reference</div>
+  <h2 class="hl">All four streams, if all four run. <span class="turn">Six months, in parallel.</span></h2>
+  <p class="lead" style="margin-bottom:6px">This is the shape of the full programme as we designed it, and it is what the four streams add up to. It is not what we are asking for now. What follows in Part 4 is the first four weeks of it.</p>
   <div class="tl">
     <div class="tl-line"></div>
-    <div class="tl-col"><div class="tl-m">Sep</div><div class="tl-dot"></div><div class="tl-txt"><b>Diagnosis</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>Findings on the base, the bill and the channels</span></div></div>
-    <div class="tl-col"><div class="tl-m">Oct</div><div class="tl-dot"></div><div class="tl-txt"><b>The 58:hours methodology</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>Offering architecture · product packages · digital prototype · funnel diagnostic</span></div></div>
-    <div class="tl-col"><div class="tl-m">Nov</div><div class="tl-dot"></div><div class="tl-txt"><b>All four streams running</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>Segments and personas · inbound blueprint and lead routing · adviser segmentation · as-is journey map</span></div></div>
-    <div class="tl-col"><div class="tl-m">Dec</div><div class="tl-dot"></div><div class="tl-txt"><b>The offering in market</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>Naming and proposition · bundle map · sales playbook · commission architecture and pilot design</span></div></div>
-    <div class="tl-col"><div class="tl-m">Jan</div><div class="tl-dot"></div><div class="tl-txt"><b>Pilots run</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>Referral mechanism · store design · the online journey, built · myON requirements and design</span></div></div>
-    <div class="tl-col"><div class="tl-m">Feb</div><div class="tl-dot"></div><div class="tl-txt"><b>Pilot results</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>Pilot analysis and roll-out decision · to-be journeys and service blueprint · CRM and CVM playbook</span></div></div>
+    <div class="tl-col"><div class="tl-m">Month 1</div><div class="tl-dot"></div><div class="tl-txt"><b>Diagnosis</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>Findings on the base, the bill and the channels</span></div></div>
+    <div class="tl-col"><div class="tl-m">Month 2</div><div class="tl-dot"></div><div class="tl-txt"><b>The 58:hours methodology</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>Offering architecture &middot; product packages &middot; digital prototype &middot; funnel diagnostic</span></div></div>
+    <div class="tl-col"><div class="tl-m">Month 3</div><div class="tl-dot"></div><div class="tl-txt"><b>All four streams running</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>Segments and personas &middot; inbound blueprint and lead routing &middot; adviser segmentation &middot; as-is journey map</span></div></div>
+    <div class="tl-col"><div class="tl-m">Month 4</div><div class="tl-dot"></div><div class="tl-txt"><b>The offering in market</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>Naming and proposition &middot; bundle map &middot; sales playbook &middot; commission architecture and pilot design</span></div></div>
+    <div class="tl-col"><div class="tl-m">Month 5</div><div class="tl-dot"></div><div class="tl-txt"><b>Pilots run</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>Referral mechanism &middot; store design &middot; the online journey, built &middot; myON requirements and design</span></div></div>
+    <div class="tl-col"><div class="tl-m">Month 6</div><div class="tl-dot"></div><div class="tl-txt"><b>Pilot results</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>Pilot analysis and roll-out decision &middot; to-be journeys and service blueprint &middot; CRM and CVM playbook</span></div></div>
   </div>
   <div class="spans" aria-label="The four streams run in parallel">
     <div class="spans-cap">Four streams, side by side</div>
@@ -569,148 +562,147 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
     <div class="span" style="grid-column:3/7"><span>3</span>The adviser network</div>
     <div class="span" style="grid-column:2/7"><span>4</span>The experience</div>
   </div>
-  <p class="foot">Under each month, the key deliverables of that month. Streams 1, 2 and 4 start in October, Stream 3 in November.</p>
+  <p class="foot">Under each month, the key deliverables of that month. Streams 1, 2 and 4 start in month two, Stream 3 in month three.</p>
 </section>
 
-<!-- ================= 15 YOUR INVESTMENT ================= -->
+<!-- ================= DIVIDER D ================= -->
+<section class="slide dark divider" data-name="Part 4">
+  <div class="ghost">4</div>
+  <div class="tag">Part 4</div>
+  <h2 class="hl">Where we start.</h2>
+</section>
+
+<!-- ================= 15 WHERE WE START ================= -->
+<section class="slide ivory" data-name="Where we start">
+  <div class="pill">Where we start</div>
+  <h2 class="hl">We start with two streams. <span class="turn">Both quick wins. Both high impact.</span></h2>
+  <p class="lead">Not the two that were easiest to agree &mdash; the two a customer can tell apart tomorrow. Nobody can buy from Volton online, and the bill arrives without warning. Four weeks each, run in parallel, and either can start without the other.</p>
+  <div class="cards cols-2">
+    <div class="card tint-c">
+      <span class="ctag">Stream 01 &middot; Digital acquisition</span>
+      <b>A customer buys online, start to finish.</b>
+      <div class="qh">
+        <div><span class="lbl">Quick win</span><span>The demand is already bought and paid for. Around <b style="display:inline">3,000 people a month</b> call or leave their details. Nothing here waits on a new billing system or a new supplier.</span></div>
+        <div><span class="lbl">High impact</span><span>18% of them convert today. Every point above that lands on volume Volton already pays for &mdash; and the queue stops being first-come, first-served.</span></div>
+      </div>
+    </div>
+    <div class="card tint-g">
+      <span class="ctag">Stream 02 &middot; The bill</span>
+      <b>The settlement warning, before the bill arrives.</b>
+      <div class="qh">
+        <div><span class="lbl">Quick win</span><span>A warning is a model and a message. It can be proven against bills already issued, without touching the billing system.</span></div>
+        <div><span class="lbl">High impact</span><span>Customers do not leave on the tariff, they leave on a date in the calendar. The clawback alone sits on <b style="display:inline">&euro;0.9m&ndash;&euro;1.5m a year</b>, in the exact month they go.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="bar">Quick win and high impact are usually a trade. These two are both, which is why they go first.</div>
+</section>
+
+<!-- ================= 16 THE FOUR WEEKS ================= -->
+<section class="slide ivory" data-name="The four weeks">
+  <div class="pill">The timeline</div>
+  <h2 class="hl">Four weeks, both streams at once. <span class="turn">A working prototype out of each.</span></h2>
+  <p class="lead" style="margin-bottom:4px">The same four steps for both, run in parallel by two teams on two sets of data. Week one starts the day the data lands &mdash; and the data ask is named up front, so it is collected alongside contracting rather than after it.</p>
+  <div class="tl" style="grid-template-columns:repeat(4,1fr)">
+    <div class="tl-line"></div>
+    <div class="tl-col"><div class="tl-m">Week 1</div><div class="tl-dot"></div><div class="tl-txt"><b>Assess</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>A lightweight diagnosis of the current situation, measured on a slice of data named in advance &mdash; not an audit of every channel</span></div></div>
+    <div class="tl-col"><div class="tl-m">Week 2</div><div class="tl-dot"></div><div class="tl-txt"><b>Design</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>Best practice gathered, the solution designed, and two or three approaches wireframed rather than argued</span></div></div>
+    <div class="tl-col"><div class="tl-m">Week 3</div><div class="tl-dot"></div><div class="tl-txt"><b>Decide &amp; build</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>One day with the core team: features and functionality decided in the room. The prototype is built against those decisions</span></div></div>
+    <div class="tl-col"><div class="tl-m">Week 4</div><div class="tl-dot"></div><div class="tl-txt"><b>Review, refine, plan</b><span class="dlv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg>The prototype tested and refined, and the action plan for deployment and measurement</span></div></div>
+  </div>
+  <div class="spans" style="grid-template-columns:repeat(4,1fr)" aria-label="Both streams run in parallel">
+    <div class="spans-cap" style="grid-column:1/5">Two streams, side by side</div>
+    <div class="span s1" style="grid-column:1/5"><span>01</span>Digital acquisition</div>
+    <div class="span" style="grid-column:1/5"><span>02</span>The bill</div>
+  </div>
+  <p class="foot">Week 3 is where the 58:hours methodology sits, compressed into one day per stream: everyone who needs to decide, in one room, deciding rather than reviewing.</p>
+</section>
+
+<!-- ================= 17 DELIVERABLES 01 ================= -->
+<section class="slide" data-name="Deliverables 01">
+  <div class="pill">Stream 01, Digital acquisition</div>
+  <h2 class="hl">What lands, week by week. <span class="turn">Ending in a customer who buys alone.</span></h2>
+  <div class="cards cols-4">
+    <div class="card"><span class="wk-h">Week 1 &middot; Assess</span><b>The funnel, counted.</b><ul class="kd"><li>The as-is funnel measured step by step: where the ~3,000 a month are actually lost</li><li>Callback queue conversion, by source and by time-to-contact</li><li>The 16 tariff pages read as a choice: what a customer is really being asked to decide</li><li>Legal's actual position on e-signature, and IT's on what can integrate</li></ul></div>
+    <div class="card"><span class="wk-h">Week 2 &middot; Design</span><b>The journey, designed.</b><ul class="kd"><li>Benchmark: how switching is bought online in energy, telco and banking, in Greece and outside it</li><li>The target journey designed end to end: tariff selection, qualification, contract, signature</li><li>The lead qualification and routing model: which lead is worth what, who takes it, in what order</li><li>Two or three journey approaches, wireframed</li></ul></div>
+    <div class="card"><span class="wk-h">Week 3 &middot; Decide &amp; build</span><b>Decisions, then build.</b><ul class="kd"><li>One day with the core team: features in, features out, decided and written down</li><li>The inbound sale blueprint: front stage, back stage, support</li><li>The prototype built against those decisions, on real tariffs</li></ul></div>
+    <div class="card"><span class="wk-h">Week 4 &middot; Review &amp; plan</span><b>Tested, and costed.</b><ul class="kd"><li>The prototype, clickable end to end, tested with real customers and refined on what they do</li><li>A build brief: what production costs, what it integrates with, what legal and IT must clear first</li><li>The measurement plan: the funnel metrics, the baseline as measured in week one, the target</li></ul></div>
+  </div>
+  <div class="bar" style="font-size:19px">From Volton: one named owner on the marketing side who decides rather than attends, one IT contact, and the week-one data.</div>
+</section>
+
+<!-- ================= 18 DELIVERABLES 02 ================= -->
+<section class="slide grey" data-name="Deliverables 02">
+  <div class="pill">Stream 02, The bill</div>
+  <h2 class="hl">What lands, week by week. <span class="turn">Ending in a warning a customer understands.</span></h2>
+  <div class="cards cols-4">
+    <div class="card"><span class="wk-h">Week 1 &middot; Assess</span><b>The calendar, counted.</b><ul class="kd"><li>The billing calendar mapped by zone: when readings land, when settlement bills issue</li><li>Churn timed against that calendar: when customers actually leave, not why they say they do</li><li>The clawback quantified: how often it fires, what it covers, what it costs</li><li>One live sample of each bill type, read as a customer reads it</li></ul></div>
+    <div class="card"><span class="wk-h">Week 2 &middot; Design</span><b>The estimate, built.</b><ul class="kd"><li>Benchmark: how other markets handle estimated billing and bill shock</li><li>The settlement estimate model, built on real historic consumption</li><li>The week-ten warning drawn three ways: the message, the channel, the timing</li><li>The redesigned bill event around it, wireframed</li></ul></div>
+    <div class="card"><span class="wk-h">Week 3 &middot; Decide &amp; build</span><b>Decisions, then build.</b><ul class="kd"><li>One day with the core team: which warning ships, what the bill says, what happens to the clawback</li><li>The bill moment redesigned: what the customer sees when the settlement bill lands</li><li>The model and the moment built together, in plain Greek</li></ul></div>
+    <div class="card"><span class="wk-h">Week 4 &middot; Review &amp; plan</span><b>Scored, and costed.</b><ul class="kd"><li>Accuracy reported against bills already issued, and the warning refined on it</li><li>The action plan: what it takes to run this against the live billing system, and who owns it</li><li>The measures: settlement-month churn, late payment, clawback incidence, call volume</li></ul></div>
+  </div>
+  <div class="bar" style="font-size:19px">From Volton: one named owner of billing. Today no single person holds it &mdash; that decision costs nothing and blocks everything.</div>
+</section>
+
+<!-- ================= 19 WHAT A PROTOTYPE IS ================= -->
+<section class="slide" data-name="What a prototype is">
+  <div class="pill">Settled before we start</div>
+  <h2 class="hl">What a prototype is, <span class="turn">and what it is not.</span></h2>
+  <p class="lead">Worth agreeing in writing now, so that the demo in week four is a decision and not an argument about why it is not yet in production.</p>
+  <div class="cards cols-2">
+    <div class="card"><span class="ctag">It is</span><ul class="kd"><li>A working journey and a working model, on Volton's real tariffs and real consumption</li><li>Demonstrable &mdash; the board sees the thing rather than reads about it</li><li>Testable with real customers, and refined on what they actually do</li><li>The evidence and the design decisions a production build needs, settled before anyone writes production code</li></ul></div>
+    <div class="card dashed"><span class="ctag">It is not</span><ul class="kd"><li>Connected to billing, to CRM, or to the meter data feed</li><li>Signing live contracts, or sending to live customers</li><li>The production build &mdash; that is scoped separately, on what these four weeks produce</li><li>A document. It runs.</li></ul></div>
+  </div>
+  <div class="bar">Deciding on a prototype costs a week. Deciding in production costs a quarter.</div>
+</section>
+
+<!-- ================= 20 YOUR INVESTMENT ================= -->
 <section class="slide ivory" data-name="Your investment">
   <div class="pill">Your investment</div>
-  <h2 class="hl">We don&rsquo;t charge for time.<br>We price on <span class="turn">speed</span> and on the <span class="turn">value delivered</span>.</h2>
+  <h2 class="hl">Two streams, priced and run separately. <span class="turn">Either can start without the other.</span></h2>
 
-  <div class="spine">
+  <div class="spine" style="grid-template-columns:1fr 1fr 24px 1fr;gap:14px">
 
     <div class="p-card">
-      <span class="p-eyeb">Step 0 &middot; Diagnose</span>
+      <span class="p-eyeb">Stream 01 &middot; Digital acquisition<span class="sub">Four weeks, in parallel with 02</span></span>
       <div class="num">&euro;25k</div>
-      <b>Two weeks to uncover what matters before anyone decides.</b>
-      <ul class="kd">
-        <li>Map your customer base and where customers drop off</li>
-        <li>Follow the funnel from lead to sale</li>
-        <li>Review every channel: performance, pain points and opportunity</li>
-        <li>Assess stores through visits and mystery shopping</li>
-        <li>Update the presentation to the CEO with our assessment</li>
-      </ul>
+      <b>A customer who starts and finishes online, on their own.</b>
+      <ul class="kd"><li>The as-is funnel, measured</li><li>The target journey designed, wireframed and decided with your team</li><li>The lead qualification and routing model</li><li>A prototype, clickable end to end on real tariffs</li><li>A build brief and a measurement plan</li></ul>
+      <span class="p-note"><b>From Volton:</b> one named owner on the marketing side, one IT contact, and the week-one data.</span>
     </div>
 
-    <div class="farrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></div>
-
     <div class="p-card">
-      <span class="p-eyeb">Step 1 &middot; Decide<span class="sub">The 58:hours workshop</span></span>
-      <div class="num">&euro;75k</div>
-      <b>Three days. Decisions taken, and work already built. Not a set of minutes.</b>
-      <ul class="kd">
-        <li>Define the new proposition and offer, including package names</li>
-        <li>Clarify every channel&rsquo;s role, key tactics and ownership</li>
-        <li>Design and agree the full online acquisition experience</li>
-        <li>Create a first version of the bill, aligned with stakeholders</li>
-      </ul>
-      <span class="p-note"><b>Includes preparation:</b> agenda design, pre-reading and decision materials.</span>
+      <span class="p-eyeb">Stream 02 &middot; The bill<span class="sub">Four weeks, in parallel with 01</span></span>
+      <div class="num">&euro;25k</div>
+      <b>The settlement warning, before the bill arrives.</b>
+      <ul class="kd"><li>The billing calendar and churn, timed against each other</li><li>The clawback quantified, and what changing it is worth</li><li>A settlement estimate model, scored against bills already issued</li><li>The warning and the bill moment, prototyped in plain Greek</li><li>An action plan for deployment and measurement</li></ul>
+      <span class="p-note"><b>From Volton:</b> one named owner of billing. The single biggest dependency in this stream.</span>
     </div>
 
     <div class="farrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></div>
 
     <div class="p-card later">
-      <span class="p-eyeb">Step 2 &middot; Build</span>
-      <div class="num">Scoped after the workshop</div>
-      <b>Priorities are set in the workshop. Each stream is scoped after it.</b>
+      <span class="p-eyeb">After the four weeks</span>
+      <div class="num">Scoped on the evidence</div>
+      <b>Priced when there is something to price it against.</b>
       <ul class="kd streams">
-        <li data-n="1"><span class="st">The offering.</span> Segments and personas mapped across products, and the bundle map</li>
-        <li data-n="2"><span class="st">Go-to-market.</span> One playbook written per channel, the inbound process live, lead routing, stores redesigned</li>
-        <li data-n="3"><span class="st">The advisers.</span> Payouts remodelled on lifetime value, the new commission architecture, piloted before it goes wide</li>
-        <li data-n="4"><span class="st">The experience.</span> The prototype taken to live, myON improvements, the bill designed and finalised, CVM journeys built in Salesforce</li>
+        <li data-n="1"><span class="st">The offering.</span> Segments, product architecture, the bundle map</li>
+        <li data-n="2"><span class="st">Go-to-market.</span> The playbook per channel, stores, referral</li>
+        <li data-n="3"><span class="st">The advisers.</span> Commission remodelled on lifetime value, piloted first</li>
+        <li data-n="4"><span class="st">The experience.</span> The production builds these four weeks argue for</li>
       </ul>
     </div>
 
   </div>
 
-  <p class="p-foot">All prices exclude VAT.</p>
+  <p class="p-foot">All prices exclude VAT. Nothing in these two streams commits Volton to anything that follows them.</p>
 </section>
 
-<!-- ================= 16 THE THREE DAYS ================= -->
-<section class="slide grey" data-name="The three days">
-  <div class="pill">The 58:hours workshop</div>
-  <h2 class="hl w-hl">Everyone who needs to decide, in one room.<br><span class="turn">Three days to set the direction.</span></h2>
-  <p class="lead w-lead">58:hours is our proprietary methodology: complex challenges cracked in 58 hours or less. We begin with a shared understanding and spend three focused days making the decisions that matter.</p>
-
-  <div class="w-cards">
-
-    <div class="w-card">
-      <span class="w-eyeb">Day 1 &middot; <b>The offering</b></span>
-      <div class="w-blk obj">
-        <span class="w-lbl">Objective</span>
-        <p>Align the core decision-makers on the new direction: the proposition, products and their names.</p>
-      </div>
-      <div class="w-blk">
-        <span class="w-lbl">Flow</span>
-        <ol class="w-flow">
-          <li>Review the diagnosis together</li>
-          <li>Define the proposition and the direction it creates</li>
-          <li>Shape the household and business packages</li>
-          <li>Develop naming in parallel with a REBORRN branding expert</li>
-        </ol>
-      </div>
-      <div class="w-blk out">
-        <span class="w-lbl">By the end of the day</span>
-        <p>A signed off proposition and package set, setting the direction for channels and customer experience.</p>
-      </div>
-    </div>
-
-    <div class="w-card">
-      <span class="w-eyeb">Day 2 &middot; <b>The channels</b></span>
-      <div class="w-blk obj">
-        <span class="w-lbl">Objective</span>
-        <p>Give every channel a clear role, a way to win, and what it needs to deliver.</p>
-      </div>
-      <div class="w-blk">
-        <span class="w-lbl">Flow</span>
-        <ol class="w-flow">
-          <li>Split into channel teams</li>
-          <li>Cover inbound, stores, door-to-door and outbound</li>
-          <li>Define each channel&rsquo;s audience, role, tactics and tools</li>
-        </ol>
-      </div>
-      <div class="w-blk out">
-        <span class="w-lbl">By the end of the day</span>
-        <p>Per channel: the role, the tactics, and what it takes to make it real, with owners and next steps agreed across the room.</p>
-      </div>
-    </div>
-
-    <div class="w-card">
-      <span class="w-eyeb">Day 3 &middot; <b>The experience</b></span>
-      <div class="w-blk obj">
-        <span class="w-lbl">Objective</span>
-        <p>Agree the online experience end to end, and see it running.</p>
-      </div>
-      <div class="w-blk">
-        <span class="w-lbl">Flow</span>
-        <ol class="w-flow">
-          <li>Map, design and align on the online acquisition in a working prototype</li>
-          <li>Design and agree on the first version of the bill</li>
-          <li>Agree and prioritise the key myON app improvements for Q4</li>
-          <li>Prioritise CVM journeys and set their direction</li>
-        </ol>
-      </div>
-      <div class="w-blk out">
-        <span class="w-lbl">By the end of the day</span>
-        <p>An approved prototype, ready for development, a first version of the bill, and the myON priorities set for Q4.</p>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="w-rooms">
-    <div class="w-room"><span class="w-lbl">From Volton</span><span>Energy Unit lead, Commercial, Marketing, Stores, Call Centre, Customer Care, IT, Product Owners.</span></div>
-    <div class="w-room"><span class="w-lbl">From REBORRN</span><span>Partner, Project Leads, Product Design, Content Strategist.</span></div>
-  </div>
-
-  <p class="w-foot">Indicative flow, refined together as we prepare the workshop.</p>
-</section>
-
-<!-- ================= 17 CLOSE ================= -->
+<!-- ================= 21 CLOSE ================= -->
 <section class="slide dark" data-name="Close">
   <div class="pill">Next steps, the team</div>
-  <h2 class="hl">Six months, four streams. <span class="turn">All four running by the third month.</span></h2>
-  <p class="lead">The streams overlap and none waits for another to finish. If Volton needs to prioritise, you choose what comes first and we plan around it. It starts with a date for the 58:hours methodology, and access to your data and your channels.</p>
+  <h2 class="hl">Two streams. Four weeks. <span class="turn">Both quick wins, both high impact.</span></h2>
+  <p class="lead">They run in parallel, on different data, with different owners, and neither waits for the other. Four weeks from the day the data lands: two working prototypes, the measured evidence underneath them, and a costed plan for what to build. Everything after that is decided on it. It starts with two named owners and a date.</p>
   <div class="team"><div class="person"><div class="av">CM</div><b>Costas Mantziaris</b><span>Co-Founder and Managing Partner</span></div><div class="person"><div class="av">MN</div><b>Mathilda Nathan</b><span>Partner, AI and Product</span></div><div class="person"><div class="av">MP</div><b>Maria Protogeraki</b><span>Engagement Manager</span></div><div class="person"><div class="av">EK</div><b>Evita Kalfa</b><span>Engagement Lead</span></div><div class="person" style="grid-column:1/-1;min-height:0;padding:14px 20px;flex-direction:row;gap:24px;align-items:center"><span>Plus the analyst pair for the diagnosis and the Engineering Lead for the build.</span><span style="margin-left:auto">We're REBORRN, a boutique consultancy. A hybrid of consultants and makers. Our proprietary 58:hours methodology tackles complex business challenges in 58 hours or less. We stay and build it with you.</span></div></div>
   <div class="bar" style="margin-top:18px">The four big groups can win the hedge. Volton can win the bill.</div>
   <div class="meta" style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:14px;color:rgba(251,250,247,.72)"><div class="logo"><svg width="324" height="42" viewBox="0 0 324 42" fill="none" xmlns="http://www.w3.org/2000/svg">
