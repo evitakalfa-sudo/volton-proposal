@@ -15,7 +15,7 @@
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);font-family:var(--rb-sans);overflow:hidden}
 .deck{position:fixed;left:0;right:0;top:0;bottom:var(--chrome);display:flex;align-items:center;justify-content:center;background:var(--rb-black)}
-.stage{position:relative;width:var(--W);height:var(--H);transform-origin:center center}
+.stage{position:relative;width:var(--W);height:var(--H);transform-origin:center center;flex:0 0 auto}  /* never let the deck's flexbox squash the stage; fit() scales it */
 .slide{position:absolute;inset:0;padding:64px 96px 72px 96px;display:none;flex-direction:column;background:var(--rb-offwhite);color:var(--rb-black);font-size:18px;line-height:1.5}
 .slide.on{display:flex}
 .slide.ivory{background:var(--rb-ivory)}
@@ -240,6 +240,7 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 .cpanel .send{background:var(--rb-blue);color:var(--rb-offwhite);border:0;border-radius:999px;padding:9px 16px;font:600 13px var(--rb-sans);cursor:pointer;min-height:36px}
 .cpanel .send[disabled]{opacity:.5;cursor:default}
 .cpanel .err{color:#8a1c1c;font-size:12.5px}
+@media (max-width:1100px){.cpanel{width:320px}.deck.copen{right:320px}}
 @media print{.cpanel,.chrome .cbtn{display:none!important}}
 /* comment pins on the slide */
 .pins{position:absolute;inset:0;pointer-events:none;z-index:5}
@@ -855,10 +856,12 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
     }).catch(function(){ available=false; comments=[]; form.hidden=true; render(); });
   }
   function schedule(){ clearTimeout(timer); timer=setTimeout(function(){load().then(schedule)}, open?POLL_OPEN:POLL_CLOSED); }
+  function refit(){ window.dispatchEvent(new Event('resize')); }
+  deck.addEventListener('transitionend',function(e){ if(e.propertyName==='right') refit(); });
   function setOpen(v){
     open=v; panel.classList.toggle('open',v); deck.classList.toggle('copen',v);
     panel.setAttribute('aria-hidden',String(!v)); $('cbtn').setAttribute('aria-expanded',String(v));
-    window.dispatchEvent(new Event('resize'));
+    refit(); setTimeout(refit,320);                        // once now, once after the deck's slide transition
     if(v){ load().then(schedule); if(!nameEl.value) nameEl.focus(); else textEl.focus(); } else { setPinMode(false); }
   }
   $('cbtn').onclick=function(){setOpen(!open)};
