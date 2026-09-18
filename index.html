@@ -408,10 +408,20 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 .slide[data-name="How it runs"] .p-note{font-size:13px}
 .slide[data-name="How it runs"] .tl{margin-top:24px}
 .slide[data-name="How it runs"] .bar{font-size:17.5px;padding:16px 22px;line-height:1.4;margin-top:auto}
-.slide[data-name="How it runs"] .spine{margin-top:22px;margin-bottom:0}
-.slide[data-name="How it runs"] .spine .card{padding:18px 20px;font-size:14px;line-height:1.45;gap:6px}
-.slide[data-name="How it runs"] .spine .card b{font-size:17.5px;font-family:var(--rb-serif);font-weight:500;line-height:1.2}
-.slide[data-name="How it runs"] .spine .p-eyeb{margin-bottom:2px}
+.slide[data-name="How it runs"] .hl{font-size:36px;margin-bottom:11px}
+.slide[data-name="How it runs"] .lead{font-size:17px;line-height:1.5;max-width:1020px;margin-bottom:0}
+.tplan{display:grid;grid-template-columns:repeat(4,1fr);gap:9px 14px;margin-top:20px;flex-shrink:0}
+.tp-w{grid-row:1;font:600 10.5px/1 var(--rb-sans);letter-spacing:.14em;text-transform:uppercase;opacity:.5;text-align:center;padding-bottom:6px;border-bottom:1px solid rgba(18,18,18,.18)}
+.tp-day{grid-row:2;background:var(--rb-black);color:var(--rb-offwhite);border-radius:14px;padding:13px 16px}
+.tp-h{display:flex;align-items:center;gap:7px;font:700 9.5px/1.2 var(--rb-sans);letter-spacing:.1em;text-transform:uppercase;opacity:.72;margin-bottom:7px}
+.tp-h svg{width:13px;height:13px;flex:0 0 auto}
+.tp-day b{display:block;font-family:var(--rb-serif);font-weight:500;font-size:17px;line-height:1.15;margin-bottom:8px}
+.tp-day ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;font-size:12.5px;line-height:1.35}
+.tp-day li{position:relative;padding-left:12px}
+.tp-day li::before{content:"";position:absolute;left:0;top:.48em;width:4px;height:4px;border-radius:50%;background:var(--rb-offwhite);opacity:.75}
+.tp-work{grid-row:3;background:var(--rb-offwhite);border-radius:12px;padding:11px 15px;font-size:12.5px;line-height:1.36}
+.tp-work b{display:block;font-size:13.5px;margin-bottom:2px}
+.tp-cap{grid-row:4;grid-column:1/5;font:600 10.5px/1 var(--rb-sans);letter-spacing:.12em;text-transform:uppercase;opacity:.5;margin-top:2px}
 .slide[data-name="Why a prototype"]{padding:50px 88px 44px}
 .slide[data-name="Why a prototype"] .hl{font-size:38px;margin-bottom:12px}
 .slide[data-name="Why a prototype"] .lead{font-size:17px;line-height:1.5;max-width:1090px;margin-bottom:18px}
@@ -661,13 +671,15 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 <section class="slide ivory" data-name="How it runs">
   <div class="pill">How it runs</div>
   <h2 class="hl">We kick off together. <span class="turn">Four weeks later, both are ready for development.</span></h2>
-  <p class="lead">Both streams run the same shape at the same time, by two teams on two sets of data. Two sessions hold it together: half a day to kick off, and a full day in week three to work on what is built. Four weeks later, each has a working prototype and everything a development team needs to take it on.</p>
-  <div class="spine" style="grid-template-columns:1fr 24px 1fr 24px 1fr">
-    <div class="card"><span class="p-eyeb">Week 1</span><b>Kick off, and agree how we work.</b><span>We come to it prepared, with the journey already drawn. In the room we map it together with the people who own it, agree the way of working and the communication flow, and set the milestones for the four weeks. Then we read the current state.</span><span class="sesnote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M2.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.5c2.8 0 5 1.8 5 4.5"/></svg>Half a day together</span></div>
-    <div class="farrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></div>
-    <div class="card"><span class="p-eyeb">Weeks 2 and 3</span><b>Design, build, and decide together.</b><span>Each prototype gets built to a first working version, on real tariffs and real consumption. In week three we take a full day with IT, Marketing, Digital and the vendors to assess it and sign off what ships. It does not need to be perfect. It needs to be real enough to decide on.</span><span class="sesnote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M2.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.5c2.8 0 5 1.8 5 4.5"/></svg>One full day together, week 3</span></div>
-    <div class="farrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></div>
-    <div class="card"><span class="p-eyeb">Week 4</span><b>Ready for development.</b><span>The prototypes refined on what the stakeholders said. With them, the full assets library, the high level spec, and a development timeline agreed with the people who will build it, so nobody discovers the plan after it is written.</span></div>
+  <p class="lead">Both streams run the same shape at the same time, by two teams on two sets of data. Two days in the room hold the four weeks together. The work in between is ours.</p>
+  <div class="tplan">
+    <div class="tp-w">Week 1</div><div class="tp-w">Week 2</div><div class="tp-w">Week 3</div><div class="tp-w">Week 4</div>
+    <div class="tp-day" style="grid-column:1"><span class="tp-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M2.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.5c2.8 0 5 1.8 5 4.5"/></svg>Half a day together</span><b>Kick off, and agree how we work.</b><ul><li>Map the customer journey together, on the one we bring prepared</li><li>Agree the way of working and the communication flow</li><li>Set the milestones for the four weeks</li></ul></div>
+    <div class="tp-day" style="grid-column:3"><span class="tp-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M2.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.5c2.8 0 5 1.8 5 4.5"/></svg>One full day together</span><b>Assess, and sign off what ships.</b><ul><li>Walk the working prototypes with IT, Marketing, Digital and the vendors</li><li>Decide what ships in the first version and what waits</li><li>Agree the development timeline with the people who will build it</li></ul></div>
+    <div class="tp-work" style="grid-column:1/2"><b>Read the current state</b>The data, the systems, and what customers actually do today.</div>
+    <div class="tp-work" style="grid-column:2/4"><b>Design and build</b>Each prototype taken to a first working version, on real tariffs and real consumption.</div>
+    <div class="tp-work" style="grid-column:4/5"><b>Refine and hand over</b>The assets library, the high level spec, the agreed timeline.</div>
+    <div class="tp-cap">Both streams, side by side, the whole way</div>
   </div>
   <div class="bar">Three things leave the four weeks: two working prototypes, the high level spec for each, and a development timeline the stakeholders have agreed to. Not a document about them.</div>
 </section>
