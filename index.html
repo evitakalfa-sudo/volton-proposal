@@ -350,23 +350,23 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 .covers .cn{font-family:var(--rb-serif);font-size:14.5px;color:var(--rb-blue);font-variant-numeric:tabular-nums}
 .covers b{display:inline;font-size:14px;font-weight:700}
 .coverslbl{display:block;font:600 10.5px/1.7 var(--rb-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--rb-blue);margin-top:10px}
-.slide[data-name="Where we start"]{padding:44px 88px 28px}
+.slide[data-name="Where we start"]{padding:38px 88px 14px}
 .slide[data-name="Where we start"] .hl{font-size:37px;margin-bottom:11px}
-.slide[data-name="Where we start"] .lead{font-size:17.5px;line-height:1.45;max-width:900px;margin-bottom:18px}
+.slide[data-name="Where we start"] .lead{font-size:17.5px;line-height:1.45;max-width:900px;margin-bottom:14px}
 .slide[data-name="Where we start"] .card{padding:15px 18px}
 .slide[data-name="Where we start"] .card > b{font-size:18px}
 .slide[data-name="Where we start"] .covers{font-size:13.5px;gap:6px;margin:9px 0 2px}
 .slide[data-name="Where we start"] .covers b{font-size:13.5px}
 .slide[data-name="Where we start"] .coverslbl{margin-top:8px}
 .coverstxt{margin:7px 0 2px;font-size:13px;line-height:1.38}
-.pricefoot{margin-top:8px;padding-top:6px;border-top:1px solid rgba(18,18,18,.16);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.pricefoot{margin-top:7px;padding-top:5px;border-top:1px solid rgba(18,18,18,.16);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .pricefoot .pnum{font-family:var(--rb-serif);font-weight:500;font-size:29px;line-height:1;color:var(--rb-blue);font-variant-numeric:tabular-nums}
 .pricefoot .pmeta{font:600 10.5px/1.4 var(--rb-sans);letter-spacing:.1em;text-transform:uppercase;opacity:.62}
-.fromv{margin:6px 0 0;font-size:12.5px;line-height:1.4}
+.fromv{margin:5px 0 0;font-size:12.5px;line-height:1.4}
 .fromv b{display:inline;font-size:inherit;font-weight:700}
-.slide[data-name="Where we start"] .qh{margin-top:7px;gap:5px}
+.slide[data-name="Where we start"] .qh{margin-top:6px;gap:4px}
 .slide[data-name="Where we start"] .qh > div{font-size:13px;line-height:1.35;grid-template-columns:86px 1fr}
-.slide[data-name="Where we start"] .bar{font-size:18px;padding:11px 20px;margin-top:11px}
+.slide[data-name="Where we start"] .bar{font-size:17.5px;padding:10px 20px;margin-top:9px}
 .slide[data-name^="Deliverables"] .cards{gap:12px}
 .slide[data-name^="Deliverables"] .card{padding:15px 17px;font-size:13.5px;line-height:1.38;gap:2px}
 .slide[data-name^="Deliverables"] .card b{font-size:15px;margin-bottom:2px}
@@ -410,21 +410,25 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 .slide[data-name="How it runs"] .bar{font-size:17.5px;padding:16px 22px;line-height:1.4;margin-top:auto}
 .slide[data-name="How it runs"] .hl{font-size:36px;margin-bottom:11px}
 .slide[data-name="How it runs"] .lead{font-size:17px;line-height:1.5;max-width:1020px;margin-bottom:0}
-.slide[data-name="How it runs"] .steps{grid-template-columns:repeat(6,1fr);gap:11px;margin-top:auto;margin-bottom:auto;align-items:stretch}
-.slide[data-name="How it runs"] .step{background:var(--rb-offwhite);padding:13px 14px;font-size:12px;line-height:1.38;display:flex;flex-direction:column}
-.slide[data-name="How it runs"] .step .m{font-size:10.5px;letter-spacing:.11em;margin-bottom:5px;opacity:.5}
-.slide[data-name="How it runs"] .step b{display:block;font-size:13.5px;line-height:1.25;margin-bottom:5px}
-.slide[data-name="How it runs"] .step.day{border-left:3px solid var(--rb-blue)}
-.slide[data-name="How it runs"] .step.day .m{color:var(--rb-blue);opacity:1}
-.dur{margin-top:auto;padding-top:9px;font:700 9px/1.25 var(--rb-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--rb-blue)}
+.tline{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:0 11px;margin-top:auto;margin-bottom:auto;flex-shrink:0}
+.tline-rule{position:absolute;left:8%;right:8%;top:30px;height:2px;background:rgba(18,18,18,.22);z-index:0}
+.t2-lab{grid-row:1;font:600 10.5px/1 var(--rb-sans);letter-spacing:.12em;text-transform:uppercase;opacity:.5;text-align:center}
+.t2-dot{grid-row:2;width:13px;height:13px;border-radius:50%;background:var(--rb-blue);margin:14px auto 0;box-shadow:0 0 0 4px var(--rb-ivory);position:relative;z-index:1}
+.t2-dot.big{width:17px;height:17px;background:var(--rb-black);margin-top:12px}
+.t2-stem{grid-row:3;width:2px;height:18px;background:rgba(18,18,18,.28);margin:7px auto 0}
+.t2-box{grid-row:4;background:var(--rb-offwhite);border-radius:12px;padding:12px 14px;font-size:12px;line-height:1.38;display:flex;flex-direction:column;margin-top:0}
+.t2-box b{display:block;font-size:13.5px;line-height:1.25;margin-bottom:5px}
+.t2-box.day{border:1px solid rgba(18,18,18,.16);border-top:3px solid var(--rb-black)}
+.dur{margin-top:auto;padding-top:8px;font:700 9px/1.25 var(--rb-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--rb-blue)}
+.t2-box.day .dur{color:var(--rb-black)}
 .slide[data-name="Why a prototype"]{padding:50px 88px 44px}
 .slide[data-name="Why a prototype"] .hl{font-size:38px;margin-bottom:12px}
 .slide[data-name="Why a prototype"] .lead{font-size:17px;line-height:1.5;max-width:1090px;margin-bottom:18px}
-.slide[data-name="Why a prototype"] .card{padding:18px 20px;gap:6px}
-.slide[data-name="Why a prototype"] .card b{font-size:16px}
-.slide[data-name="Why a prototype"] .card .small{font-size:13.5px;line-height:1.42}
+.slide[data-name="Why a prototype"] .card{padding:22px 24px;gap:8px}
+.slide[data-name="Why a prototype"] .card b{font-size:17.5px;line-height:1.25}
+.slide[data-name="Why a prototype"] .card .small{font-size:14.5px;line-height:1.5}
 .slide[data-name="Why a prototype"] .bar{font-size:18px;padding:15px 22px;margin-top:18px}
-.slide[data-name="Why a prototype"] .cards{margin-top:auto;margin-bottom:auto}
+.slide[data-name="Why a prototype"] .cards{margin-top:auto;margin-bottom:auto;gap:14px}
 .sesnote{margin-top:auto;padding-top:10px;border-top:1px solid rgba(18,18,18,.14);display:flex;align-items:center;gap:7px;font:700 10.5px/1.3 var(--rb-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--rb-blue)}
 .sesnote svg{width:14px;height:14px;flex:0 0 auto}
 .lanes{display:flex;flex-direction:column;gap:6px;margin-top:20px;flex-shrink:0}
@@ -642,8 +646,8 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
       <b>A customer buys online, start to finish.</b>
       <span class="coverslbl">It covers</span><p class="coverstxt">One journey a customer completes on their own. Tariff selection, qualification, contract and signature, in one sitting, with no callback in the middle. The same flow is reusable by the stores and by door to door afterwards, each with their own access rights, and every sign-up lands straight in Salesforce.</p>
       <div class="qh">
-        <div><span class="lbl">Quick win</span><span>The demand is already bought and paid for. Around <b>3,000 people a month</b> call or leave their details.</span></div>
-        <div><span class="lbl">High impact</span><span>18% of them convert today. Every point above that lands on volume Volton already pays for.</span></div>
+        <div><span class="lbl">Quick win</span><span>The demand is already bought and paid for. People arrive on the site every day, leave their details, and then wait for someone to call them back.</span></div>
+        <div><span class="lbl">High impact</span><span>Only a part of them ever become customers. Everyone the journey keeps is volume Volton is already paying for.</span></div>
       </div>
       <div class="pricefoot"><span class="pnum">&euro;25k</span><span class="pmeta">Four weeks, in parallel with 02</span></div><p class="fromv"><b>From Volton:</b> one named owner on the marketing side, one IT contact, and the week-one data.</p>
     </div>
@@ -653,7 +657,7 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
       <span class="coverslbl">It covers</span><p class="coverstxt">The bill itself, made smart. It analyses the charges and the consumption behind them, in plain language rather than in tariff terms: what a customer is paying for and why, what is always on, and what spikes and when. It shows the metrics that matter out of their own usage, advises them on consuming better and more cheaply, and lets them see the next one coming.</p>
       <div class="qh">
         <div><span class="lbl">Quick win</span><span>It runs on data Volton already holds. We do not need to own billing, only the data that comes out of it.</span></div>
-        <div><span class="lbl">High impact</span><span>Customers leave on a date in the calendar, not on the tariff. The clawback alone sits on <b>&euro;0.9m&ndash;&euro;1.5m a year</b>.</span></div>
+        <div><span class="lbl">High impact</span><span>This is where Καμία Έκπληξη becomes something a customer holds, not a line in a deck. No Greek supplier has claimed transparency on the bill, and a price is easier to copy than a billing promise.</span></div>
       </div>
       <div class="pricefoot"><span class="pnum">&euro;25k</span><span class="pmeta">Four weeks, in parallel with 01</span></div><p class="fromv"><b>From Volton:</b> one named owner of billing. The single biggest dependency in this stream.</p>
     </div>
@@ -667,13 +671,12 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
   <div class="pill">How it runs</div>
   <h2 class="hl">We kick off together. <span class="turn">Four weeks later, both are ready for development.</span></h2>
   <p class="lead">Both streams run the same shape at the same time, by two teams on two sets of data. Two days in the room hold the four weeks together. The work in between is ours.</p>
-  <div class="steps">
-    <div class="step day"><div class="m">Kick off</div><b>Agree how we work.</b><span>Map the journey together on the one we bring prepared, agree the way of working, set the milestones.</span><span class="dur">Half a day together</span></div>
-    <div class="step"><div class="m">Week 1</div><b>Read the current state.</b><span>The data, the systems, and what customers actually do today.</span></div>
-    <div class="step"><div class="m">Week 2</div><b>Design.</b><span>The journey and the bill designed, the flows built out.</span></div>
-    <div class="step"><div class="m">Week 3</div><b>Build.</b><span>Both prototypes taken to a first working version, on real tariffs and real consumption.</span></div>
-    <div class="step day"><div class="m">One day</div><b>Assess, and sign off.</b><span>Walk the prototypes with IT, Marketing, Digital and the vendors. Decide what ships, agree the timeline.</span><span class="dur">One full day together</span></div>
-    <div class="step"><div class="m">Week 4</div><b>Ready for development.</b><span>The assets library, the high level spec, and the agreed development timeline.</span></div>
+  <div class="tline">
+    <div class="tline-rule"></div>
+    <div class="t2-lab">Kick off</div><div class="t2-lab">Week 1</div><div class="t2-lab">Week 2</div><div class="t2-lab">Week 3</div><div class="t2-lab">One day</div><div class="t2-lab">Week 4</div>
+    <div class="t2-dot big"></div><div class="t2-dot"></div><div class="t2-dot"></div><div class="t2-dot"></div><div class="t2-dot big"></div><div class="t2-dot"></div>
+    <div class="t2-stem"></div><div class="t2-stem"></div><div class="t2-stem"></div><div class="t2-stem"></div><div class="t2-stem"></div><div class="t2-stem"></div>
+    <div class="t2-box day"><b>Agree how we work.</b><span>Map the journey together on the one we bring prepared, agree the way of working, set the milestones.</span><span class="dur">Half a day together</span></div><div class="t2-box"><b>Read the current state.</b><span>The data, the systems, and what customers actually do today.</span></div><div class="t2-box"><b>Design.</b><span>The journey and the bill designed, the flows built out.</span></div><div class="t2-box"><b>Build.</b><span>Both prototypes taken to a first working version, on real tariffs and real consumption.</span></div><div class="t2-box day"><b>Assess, and sign off.</b><span>Walk the prototypes with IT, Marketing, Digital and the vendors. Decide what ships, agree the timeline.</span><span class="dur">One full day together</span></div><div class="t2-box"><b>Ready for development.</b><span>The assets library, the high level spec, and the agreed development timeline.</span></div>
   </div>
   <div class="bar">Three things leave the four weeks: two working prototypes, the high level spec for each, and a development timeline the stakeholders have agreed to. Not a document about them.</div>
 </section>
