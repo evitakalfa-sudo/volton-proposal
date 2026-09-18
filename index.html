@@ -435,6 +435,10 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 .slide[data-name="Why a prototype"] .card .small{font-size:14.5px;line-height:1.5}
 .slide[data-name="Why a prototype"] .bar{font-size:18px;padding:15px 22px;margin-top:18px}
 .barttl{display:block;font:700 10.5px/1 var(--rb-sans);letter-spacing:.14em;text-transform:uppercase;opacity:.65;margin-bottom:10px}
+.protobox{margin-top:18px;border:1px solid rgba(18,18,18,.2);border-radius:14px;padding:16px 20px;font-size:13.5px;line-height:1.5;flex-shrink:0}
+.protobox .barttl{color:var(--rb-blue);opacity:1;margin-bottom:9px}
+.protobox p{margin:0}
+.protobox p + p{margin-top:7px;opacity:.68}
 .slide[data-name="Why a prototype"] .cards{margin-top:auto;margin-bottom:auto;gap:14px}
 .sesnote{margin-top:auto;padding-top:10px;border-top:1px solid rgba(18,18,18,.14);display:flex;align-items:center;gap:7px;font:700 10.5px/1.3 var(--rb-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--rb-blue)}
 .sesnote svg{width:14px;height:14px;flex:0 0 auto}
@@ -679,14 +683,18 @@ html,body{margin:0;height:100%;background:var(--rb-black);color:var(--rb-black);
 <!-- ================= 18 WHY A PROTOTYPE ================= -->
 <section class="slide" data-name="Why a prototype">
   <div class="pill">The Power of Prototype</div>
-  <h2 class="hl">Two interactive prototypes. <span class="turn">Used before anything is built for real.</span></h2>
-  <p class="lead">Most technology projects do not fail in development. They fail before it, in requirements nobody reads and features argued in the abstract. So each one ends in something you can open and use, not something you have to imagine: an interactive prototype on a live URL, following Volton&rsquo;s brand guidelines on a design system we build for it.</p>
+  <h2 class="hl">See how it works. <span class="turn">Agree what to build.</span></h2>
+  <p class="lead">Two interactive prototypes bring online acquisition and the bill to life. Accessible through a live URL and aligned with Volton&rsquo;s brand, they give stakeholders a shared view of the proposed customer experience.</p>
   <div class="cards cols-3">
-    <div class="card"><b>You experience it. You do not read it.</b><span class="small">A live URL your team opens and uses, with the whole journey in front of them. Problems surface in hours, on the screen, not months later in the build.</span></div>
-    <div class="card"><b>It runs on dummy data.</b><span class="small">Nothing to integrate, nothing to break. The flows get settled before one live connection is built.</span></div>
-    <div class="card"><b>The holistic approach.</b><span class="small">The end-to-end experience of the consumer, with the core flows and scenarios covered, rather than one screen at a time.</span></div>
+    <div class="card"><b>See the experience in action.</b><span class="small">Walk through the key interactions, review the content and agree what works. Make changes while they are still quick and inexpensive.</span></div>
+    <div class="card"><b>Explore realistic scenarios.</b><span class="small">Use representative sample data to see how each experience responds to different customer needs, before connecting to live systems.</span></div>
+    <div class="card"><b>Agree the complete journey.</b><span class="small">Review the flows from start to finish. Align business teams, IT and vendors on the features and requirements for implementation.</span></div>
   </div>
-  <div class="bar"><span class="barttl">What are the limitations</span>No surprises here either. It is not a set of Figma screens, and it does not carry live integrations, production data, enterprise security or scale. Those arrive with the production build, with IT and the vendors, who own the infrastructure and are the ones who can integrate it safely and accurately. The prototype is what makes that build a straight line.</div>
+  <div class="protobox">
+    <span class="barttl">From prototype to production</span>
+    <p>We deliver interactive prototypes at a live URL, aligned with Volton&rsquo;s brand and using sample data, not Figma screens or final design files. They support review and validation, not live customer use.</p>
+    <p>Final design, live integrations, production data, security, scalability, launch and ongoing support are outside this phase.</p>
+  </div>
 </section>
 
 <!-- ================= 22 CLOSE ================= -->
